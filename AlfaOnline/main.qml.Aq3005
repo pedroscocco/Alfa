@@ -1,0 +1,22 @@
+import QtQuick 2.1
+import QtQuick.Window 2.1
+
+Window {
+    visible: true
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
+
+
+
+    Text {
+        text: qsTr("AlfaOnline")
+        anchors.centerIn: parent
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                Qt.quit();
+            }
+        }
+    }
+}
