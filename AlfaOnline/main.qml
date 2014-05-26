@@ -15,13 +15,14 @@ Window {
         visible: false
     }
 
-    // Exemplo pra chamar tela da letra
+    // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
     Letra {
         id: letra
         anchors.fill: parent
         visible: false
     }
 
+    // Colocar tudo abaixo em um rectangle com id menuInicial
     Text {
         id: titulo
         text: qsTr("AlfaOnline")

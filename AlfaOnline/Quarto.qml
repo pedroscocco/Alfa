@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Window 2.1
 
 //
-// TEM QUE MUDAR DE WINDOW PRA RECTANGLE!!!!
+// TEM QUE MUDAR DE WINDOW PRA ITEM!!!!
 //
 
 Window {
