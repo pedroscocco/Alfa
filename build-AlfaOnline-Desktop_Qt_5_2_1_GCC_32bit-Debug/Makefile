@@ -443,6 +443,8 @@ compiler_rcc_make_all: qrc_qml.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../AlfaOnline/qml.qrc \
+		../AlfaOnline/Quarto.qml \
+		../AlfaOnline/Letra.qml \
 		../AlfaOnline/main.qml
 	/home/icm/Qt/5.2.1/gcc/bin/rcc -name qml ../AlfaOnline/qml.qrc -o qrc_qml.cpp
 

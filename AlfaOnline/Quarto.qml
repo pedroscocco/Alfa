@@ -5,7 +5,7 @@ import QtQuick.Window 2.1
 // TEM QUE MUDAR DE WINDOW PRA ITEM!!!!
 //
 
-Window {
+Item {
     id: window
     visible: true
     width: Screen.desktopAvailableWidth
