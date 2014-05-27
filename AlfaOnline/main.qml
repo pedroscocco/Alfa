@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import QtQuick.Window 2.1
+import QtQuick.Layouts 1.1
 
 Window {
     id: window
@@ -23,68 +24,82 @@ Window {
     }
 
     // Colocar tudo abaixo em um rectangle com id menuInicial
-    Text {
-        id: titulo
-        text: qsTr("AlfaOnline")
-        font.pointSize: 34
-        anchors.horizontalCenter: parent.horizontalCenter
-        y: parent.height/2 - parent.height/10
-    }
+    Rectangle {
+        id: menuInicial
+        anchors.fill: parent
 
-    Text {
-        id: estudar
-        text: qsTr("Estudar")
-        font.pointSize: 24
-        anchors.horizontalCenter: parent.horizontalCenter
-        y: parent.height/2 + 1*parent.height/10
-
-        MouseArea {
+        ColumnLayout {
+            id: opcoes
             anchors.fill: parent
-            onPressed: {
-                estudar.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
-            }
-            onReleased: {
-                estudar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
-                quarto.visible = true;
-            }
-        }
-    }
 
-    Text {
-        id: jogar
-        text: qsTr("Jogar")
-        font.pointSize: 24
-        anchors.horizontalCenter: parent.horizontalCenter
-        y: parent.height/2 + 2*parent.height/10
-
-        MouseArea {
-            anchors.fill: parent
-            onPressed: {
-                jogar.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
-
+            Text {
+                id: titulo
+                text: qsTr("AlfaOnline")
+                font.pointSize: 34
+                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                //anchors.horizontalCenter: parent.horizontalCenter
+                //y: parent.height/2 - parent.height/10
             }
-            onReleased: {
-                jogar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
-                letra.visible = true
-            }
-        }
-    }
 
-    Text {
-        id: quit
-        text: qsTr("Quit")
-        font.pointSize: 24
-        anchors.horizontalCenter: parent.horizontalCenter
-        y: parent.height/2 + 3*parent.height/10
+            Text {
+                id: estudar
+                text: qsTr("Estudar")
+                font.pointSize: 24
+                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                //anchors.horizontalCenter: parent.horizontalCenter
+                //y: parent.height/2 + 1*parent.height/10
 
-        MouseArea {
-            anchors.fill: parent
-            onPressed: {
-                quit.color = Qt.rgba(0.5,0.5,0.5,1)
+                MouseArea {
+                    anchors.fill: parent
+                    onPressed: {
+                        estudar.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
+                    }
+                    onReleased: {
+                        estudar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
+                        quarto.visible = true;
+                    }
+                }
             }
-            onReleased: {
-                quit.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
-                Qt.quit();
+
+            Text {
+                id: jogar
+                text: qsTr("Jogar")
+                font.pointSize: 24
+                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                //anchors.horizontalCenter: parent.horizontalCenter
+                //y: parent.height/2 + 2*parent.height/10
+
+                MouseArea {
+                    anchors.fill: parent
+                    onPressed: {
+                        jogar.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
+
+                    }
+                    onReleased: {
+                        jogar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
+                        letra.visible = true
+                    }
+                }
+            }
+
+            Text {
+                id: quit
+                text: qsTr("Quit")
+                font.pointSize: 24
+                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                //anchors.horizontalCenter: parent.horizontalCenter
+                //y: parent.height/2 + 3*parent.height/10
+
+                MouseArea {
+                    anchors.fill: parent
+                    onPressed: {
+                        quit.color = Qt.rgba(0.5,0.5,0.5,1)
+                    }
+                    onReleased: {
+                        quit.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
+                        Qt.quit();
+                    }
+                }
             }
         }
     }
