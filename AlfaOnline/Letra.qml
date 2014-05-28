@@ -14,7 +14,12 @@ Item {
         anchors.margins: 50
         color: Qt.rgba(0,0,0,0.5)
 
-        GridLayout {
+        Image {
+            anchors.fill: parent
+            source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
+        }
+
+        /*GridLayout {
             id: grade
             anchors.fill: parent
             columns: 2
@@ -40,7 +45,7 @@ Item {
                 text: qsTr("D")
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
             }
-        }
+        }*/
     }
 
 }
