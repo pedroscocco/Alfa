@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtQuick.Window 2.1
+//import QtQuick.Window 2.1
 
 //
 // TEM QUE MUDAR DE WINDOW PRA ITEM!!!!
@@ -8,8 +8,8 @@ import QtQuick.Window 2.1
 Item {
     id: window
     visible: true
-    width: Screen.desktopAvailableWidth
-    height: Screen.desktopAvailableHeight
+    //width: Screen.desktopAvailableWidth
+    //height: Screen.desktopAvailableHeight
 
     Rectangle {
         id: telaLetras

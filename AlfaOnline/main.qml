@@ -12,7 +12,7 @@ Window {
     // Exemplo pra chamar quarto
     Quarto {
         id: quarto
-        //anchors.fill: parent
+        anchors.fill: parent
         visible: false
     }
 
@@ -24,6 +24,7 @@ Window {
     }
 
     // Colocar tudo abaixo em um rectangle com id menuInicial
+    // Pensando.. seria melhor colocar num arquivo so dele?
     Rectangle {
         id: menuInicial
         anchors.fill: parent
@@ -57,6 +58,7 @@ Window {
                     onReleased: {
                         estudar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         quarto.visible = true;
+                        menuInicial.visible = false
                     }
                 }
             }
@@ -78,6 +80,7 @@ Window {
                     onReleased: {
                         jogar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         letra.visible = true
+                        menuInicial.visible = false
                     }
                 }
             }
