@@ -11,13 +11,14 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        anchors.margins: 50
         color: Qt.rgba(0,0,0,0.5)
-
+        width: parent.width
+        height: parent.height
         // Fazer funcionar com imagens do aplicativo
+
         Image {
             anchors.fill: parent
-            source: "Captura de Tela.png"
+            source: "bg.jpg"
             //source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
 
             GridLayout {
@@ -26,20 +27,81 @@ Item {
                 columns: 1
                 rows: 2
 
-                Image {
-                   source: "Personagem.png"
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                }
 
-                Text {
-                    text: qsTr("B")
-                    color: "Red"
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                }
+
+                    Row {
+
+                        Image {
+                            id: u
+                            y: 100
+                            source:"U.png"
+                            NumberAnimation on x { from:250; to: 1274; duration: 16000; loops: Animation.Infinite }
+                            SequentialAnimation on y {
+                                loops: Animation.Infinite
+                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutQuad }
+                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutQuad }
+                            }
+
+
+                        }
+
+                        Image {
+                            id: a
+                            y: 0
+                            source:"A.png"
+
+
+                            NumberAnimation on x { from: 0; to: 1024; duration: 16000; loops: Animation.Infinite }
+                            SequentialAnimation on y {
+                                loops: Animation.Infinite
+                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutQuad }
+                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutQuad }
+                            }
+                        }
+
+
+                    }
+
+                    Image {
+                            id: personagem
+                            y: 0
+                            Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
+                            source:"Personagem.png"
+                    }
 
 
             }
         }
-    }
 
+        MouseArea {
+            anchors.fill: parent
+            onPressed:  animatePersonagem.start()
+            onReleased: animatePersonagemToBottom.start()
+
+
+        }
+
+        NumberAnimation {
+            id: animatePersonagem
+            target: personagem
+            property: "y"
+            from:personagem.y
+            to: y + 150
+            duration: 1600
+            easing.type: Easing.InOutQuad
+
+        }
+
+        NumberAnimation {
+            id: animatePersonagemToBottom
+            target: personagem
+            property: "y"
+            from: y+150
+            to: personagem.y
+            duration: 1600
+            easing.type: Easing.InOutQuad
+        }
+    }
 }
+
+

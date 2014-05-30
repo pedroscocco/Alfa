@@ -5,8 +5,8 @@ import QtQuick.Layouts 1.1
 Window {
     id: window
     visible: true
-    width: Screen.desktopAvailableWidth
-    height: Screen.desktopAvailableHeight
+    width: 1024
+    height: 600
 
 
     // Colocar tudo abaixo em um rectangle com id menuInicial
@@ -65,7 +65,8 @@ Window {
                     }
                     onReleased: {
                         jogar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
-                        letra.visible = true
+                        atividade.visible = true
+                        menuInicial.visible = false
                         // Para pop-up ainda mostrando a tela QML usa a ordem dos objetos como Z
                         //menuInicial.visible = false
                     }
@@ -104,6 +105,13 @@ Window {
     // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
     Letra {
         id: letra
+        anchors.fill: parent
+        visible: false
+    }
+
+    // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
+   Atividade {
+        id: atividade
         anchors.fill: parent
         visible: false
     }
