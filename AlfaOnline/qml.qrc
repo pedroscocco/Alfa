@@ -4,5 +4,7 @@
         <file>Quarto.qml</file>
         <file>Letra.qml</file>
         <file>Captura de Tela.png</file>
+        <file>Personagem.png</file>
+        <file>Atividade.qml</file>
     </qresource>
 </RCC>
