@@ -20,8 +20,10 @@ Item {
         property int letraSelecionada: 0
 
         property list<Item> letras: [
-        Letra {
-
+            Letra {
+                id: letraA
+                anchors.fill: parent
+                visible: true
             },
             Letra {
 

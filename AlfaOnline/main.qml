@@ -28,43 +28,71 @@ Window {
                 //y: parent.height/2 - parent.height/10
             }
 
-            Text {
+            GridLayout {
                 id: estudar
-                text: qsTr("Estudar")
-                font.pointSize: 24
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                //anchors.horizontalCenter: parent.horizontalCenter
-                //y: parent.height/2 + 1*parent.height/10
+                columns: 2
+
+                Text {
+                    id: estudar_texto
+                    text: qsTr("Estudar")
+                    font.pointSize: 24
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    //anchors.horizontalCenter: parent.horizontalCenter
+                    //y: parent.height/2 + 1*parent.height/10
+                }
+
+                Image {
+                    id: estudar_imagem
+                    source: "livro.jpg"
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    sourceSize.width: 100
+                    sourceSize.height: 100
+                }
 
                 MouseArea {
                     anchors.fill: parent
                     onPressed: {
-                        estudar.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
+                        estudar_texto.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
                     }
                     onReleased: {
-                        estudar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
+                        estudar_texto.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         quarto.visible = true;
                         menuInicial.visible = false
                     }
                 }
             }
 
-            Text {
+            GridLayout {
                 id: jogar
-                text: qsTr("Jogar")
-                font.pointSize: 24
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                //anchors.horizontalCenter: parent.horizontalCenter
-                //y: parent.height/2 + 2*parent.height/10
+                columns: 2
+                rows: 1
 
+                Text {
+                    id: jogar_texto
+                    text: qsTr("Jogar")
+                    font.pointSize: 24
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    //anchors.horizontalCenter: parent.horizontalCenter
+                    //y: parent.height/2 + 2*parent.height/10
+                }
+
+                Image {
+                    id: jogar_imagem
+                    source: "Personagem.png"
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    sourceSize.width: 100
+                    sourceSize.height: 100
+                }
                 MouseArea {
                     anchors.fill: parent
                     onPressed: {
-                        jogar.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
+                        jogar_texto.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
 
                     }
                     onReleased: {
-                        jogar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
+                        jogar_texto.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         atividade.visible = true
                         menuInicial.visible = false
                         // Para pop-up ainda mostrando a tela QML usa a ordem dos objetos como Z
@@ -73,21 +101,34 @@ Window {
                 }
             }
 
-            Text {
+            GridLayout {
                 id: quit
-                text: qsTr("Quit")
-                font.pointSize: 24
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                //anchors.horizontalCenter: parent.horizontalCenter
-                //y: parent.height/2 + 3*parent.height/10
+                columns: 2
+                rows: 1
 
+                Text {
+                    id: quit_texto
+                    text: qsTr("Quit")
+                    font.pointSize: 24
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    //anchors.horizontalCenter: parent.horizontalCenter
+                    //y: parent.height/2 + 3*parent.height/10
+                }
+                Image {
+                    id: quit_imagem
+                    source: "Arrow.png"
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    sourceSize.width: 100
+                    sourceSize.height: 100
+                }
                 MouseArea {
                     anchors.fill: parent
                     onPressed: {
-                        quit.color = Qt.rgba(0.5,0.5,0.5,1)
+                        quit_texto.color = Qt.rgba(0.5,0.5,0.5,1)
                     }
                     onReleased: {
-                        quit.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
+                        quit_texto.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         Qt.quit();
                     }
                 }
