@@ -9,20 +9,6 @@ Window {
     height: Screen.desktopAvailableHeight
 
 
-    // Exemplo pra chamar quarto
-    Quarto {
-        id: quarto
-        anchors.fill: parent
-        visible: false
-    }
-
-    // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
-    Letra {
-        id: letra
-        anchors.fill: parent
-        visible: false
-    }
-
     // Colocar tudo abaixo em um rectangle com id menuInicial
     // Pensando.. seria melhor colocar num arquivo so dele?
     Rectangle {
@@ -80,7 +66,8 @@ Window {
                     onReleased: {
                         jogar.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         letra.visible = true
-                        menuInicial.visible = false
+                        // Para pop-up ainda mostrando a tela QML usa a ordem dos objetos como Z
+                        //menuInicial.visible = false
                     }
                 }
             }
@@ -105,5 +92,19 @@ Window {
                 }
             }
         }
+    }
+
+    // Exemplo pra chamar quarto
+    Quarto {
+        id: quarto
+        anchors.fill: parent
+        visible: false
+    }
+
+    // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
+    Letra {
+        id: letra
+        anchors.fill: parent
+        visible: false
     }
 }

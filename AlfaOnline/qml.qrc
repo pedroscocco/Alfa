@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Quarto.qml</file>
         <file>Letra.qml</file>
+        <file>Captura de Tela.png</file>
     </qresource>
 </RCC>

@@ -508,8 +508,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../AlfaOnline/qml.qrc \
 		../AlfaOnline/Quarto.qml \
-		../AlfaOnline/main.qml \
-		../AlfaOnline/Letra.qml
+		../AlfaOnline/Letra.qml \
+		../AlfaOnline/main.qml
 	/Users/BetaKiller/Qt5.3.0/5.3/clang_64/bin/rcc -name qml ../AlfaOnline/qml.qrc -o qrc_qml.cpp
 
 compiler_moc_header_make_all:
