@@ -31,6 +31,7 @@ Window {
                 id: estudar
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
                 columns: 2
+                state: "RELEASED"
 
                 Text {
                     id: estudar_texto
@@ -51,15 +52,40 @@ Window {
 
                 MouseArea {
                     anchors.fill: parent
-                    onPressed: {
-                        estudar_texto.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
-                    }
+                    onPressed:
+                        estudar.state = "PRESSED"
                     onReleased: {
-                        estudar_texto.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
                         quarto.visible = true;
                         menuInicial.visible = false
+                        estudar.state = "RELEASED"
                     }
                 }
+
+                states: [
+                    State {
+                        name: "PRESSED"
+                        PropertyChanges { target: estudar_texto; color: Qt.rgba(0.5, 0.5, 0.5, 1.0)}
+                        PropertyChanges { target: estudar_imagem; rotation: -45 }
+                    },
+                    State {
+                        name: "RELEASED"
+                        PropertyChanges { target: estudar_texto; color: Qt.rgba(0.0, 0.0, 0.0, 1.0)}
+                    }
+                ]
+
+                transitions: [
+                    Transition {
+                        from: "PRESSED"
+                        to: "RELEASED"
+                        ColorAnimation { target: estudar_texto; duration: 100}
+                    },
+                    Transition {
+                        from: "RELEASED"
+                        to: "PRESSED"
+                        ColorAnimation { target: estudar_texto; duration: 100}
+                        RotationAnimation { duration: 1000; direction: RotationAnimation.Counterclockwise }
+                    }
+                ]
             }
 
             GridLayout {
