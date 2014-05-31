@@ -19,10 +19,9 @@ Window {
             id: opcoes
             anchors.fill: parent
 
-            Text {
+            Image {
                 id: titulo
-                text: qsTr("AlfaOnline")
-                font.pointSize: 34
+               source:"LogoTelaInicial.png"
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
                 //anchors.horizontalCenter: parent.horizontalCenter
                 //y: parent.height/2 - parent.height/10

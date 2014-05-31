@@ -105,7 +105,14 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_qml.cpp
 release/qrc_qml.cpp: ../AlfaOnline/qml.qrc \
 		../AlfaOnline/Letra.qml \
+		../AlfaOnline/U.png \
+		../AlfaOnline/livro.jpg \
+		../AlfaOnline/Atividade.qml \
+		../AlfaOnline/Personagem.png \
+		../AlfaOnline/bg.jpg \
 		../AlfaOnline/Quarto.qml \
+		../AlfaOnline/A.png \
+		../AlfaOnline/Arrow.png \
 		../AlfaOnline/main.qml
 	C:\Qt\5.3\mingw482_32\bin\rcc.exe -name qml ..\AlfaOnline\qml.qrc -o release\qrc_qml.cpp
 

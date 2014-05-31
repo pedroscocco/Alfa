@@ -104,9 +104,16 @@ compiler_rcc_make_all: debug/qrc_qml.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_qml.cpp
 debug/qrc_qml.cpp: ../AlfaOnline/qml.qrc \
-		../AlfaOnline/main.qml \
 		../AlfaOnline/Quarto.qml \
-		../AlfaOnline/Letra.qml
+		../AlfaOnline/U.png \
+		../AlfaOnline/Personagem.png \
+		../AlfaOnline/main.qml \
+		../AlfaOnline/Arrow.png \
+		../AlfaOnline/Atividade.qml \
+		../AlfaOnline/Letra.qml \
+		../AlfaOnline/A.png \
+		../AlfaOnline/livro.jpg \
+		../AlfaOnline/bg.jpg
 	C:\Qt\5.3\mingw482_32\bin\rcc.exe -name qml ..\AlfaOnline\qml.qrc -o debug\qrc_qml.cpp
 
 compiler_moc_header_make_all:
