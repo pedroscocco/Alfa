@@ -12,5 +12,12 @@
         <file>Arrow.png</file>
         <file>livro.jpg</file>
         <file>LogoTelaInicial.png</file>
+        <file>PlayButton.png</file>
+        <file>PlayButtonClicked.png</file>
+        <file>QuitButton.png</file>
+        <file>QuitButtonClicked.png</file>
+        <file>StudyButton.png</file>
+        <file>StudyButtonClicked.png</file>
+        <file>BackgroundTelaInicial.jpg</file>
     </qresource>
 </RCC>

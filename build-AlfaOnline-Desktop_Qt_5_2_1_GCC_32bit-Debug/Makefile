@@ -443,16 +443,23 @@ compiler_rcc_make_all: qrc_qml.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../AlfaOnline/qml.qrc \
-		../AlfaOnline/Personagem.png \
+		../AlfaOnline/Atividade.qml \
+		../AlfaOnline/PlayButtonClicked.png \
 		../AlfaOnline/Quarto.qml \
-		../AlfaOnline/A.png \
+		../AlfaOnline/Personagem.png \
+		../AlfaOnline/U.png \
+		../AlfaOnline/QuitButtonClicked.png \
 		../AlfaOnline/LogoTelaInicial.png \
+		../AlfaOnline/StudyButton.png \
+		../AlfaOnline/BackgroundTelaInicial.jpg \
 		../AlfaOnline/bg.jpg \
 		../AlfaOnline/main.qml \
-		../AlfaOnline/Arrow.png \
-		../AlfaOnline/Atividade.qml \
-		../AlfaOnline/U.png \
+		../AlfaOnline/A.png \
 		../AlfaOnline/Letra.qml \
+		../AlfaOnline/StudyButtonClicked.png \
+		../AlfaOnline/PlayButton.png \
+		../AlfaOnline/QuitButton.png \
+		../AlfaOnline/Arrow.png \
 		../AlfaOnline/livro.jpg
 	/home/icm/Qt/5.2.1/gcc/bin/rcc -name qml ../AlfaOnline/qml.qrc -o qrc_qml.cpp
 

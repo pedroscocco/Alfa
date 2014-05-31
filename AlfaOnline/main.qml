@@ -5,8 +5,8 @@ import QtQuick.Layouts 1.1
 Window {
     id: window
     visible: true
-    width: 1024
-    height: 600
+    width: 1280
+    height: 800
 
 
     // Colocar tudo abaixo em um rectangle com id menuInicial
@@ -15,8 +15,14 @@ Window {
         id: menuInicial
         anchors.fill: parent
 
+        Image {
+            id: bg_menu
+            anchors.fill: parent
+            source: "BackgroundTelaInicial.jpg"
+        }
+
         ColumnLayout {
-            id: opcoes
+            id: objetos
             anchors.fill: parent
 
             Image {
@@ -27,134 +33,59 @@ Window {
                 //y: parent.height/2 - parent.height/10
             }
 
-            GridLayout {
-                id: estudar
-                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                columns: 2
-                state: "RELEASED"
+            RowLayout {
+            id: opcoes
+            Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
 
-                Text {
-                    id: estudar_texto
-                    text: qsTr("Estudar")
-                    font.pointSize: 24
+                Image {
+                    id: estudar
+                    source: "StudyButton.png"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    //anchors.horizontalCenter: parent.horizontalCenter
-                    //y: parent.height/2 + 1*parent.height/10
+                    MouseArea {
+                        anchors.fill: parent
+                        onPressed: {
+                            estudar.source = "StudyButtonClicked.png"
+                        }
+                        onReleased: {
+                            quarto.visible = true;
+                            menuInicial.visible = false
+                            estudar.source = "StudyButton.png"
+                        }
+                    }
                 }
 
                 Image {
-                    id: estudar_imagem
-                    source: "livro.jpg"
+                    id: jogar
+                    source: "PlayButton.png"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    sourceSize.width: 100
-                    sourceSize.height: 100
-                }
 
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed:
-                        estudar.state = "PRESSED"
-                    onReleased: {
-                        quarto.visible = true;
-                        menuInicial.visible = false
-                        estudar.state = "RELEASED"
+                    MouseArea {
+                        anchors.fill: parent
+                        onPressed: {
+                            jogar.source = "PlayButtonClicked.png"
+                        }
+                        onReleased: {
+                            atividade.visible = true
+                            menuInicial.visible = false
+                            jogar.source = "PlayButton.png"
+                        }
                     }
-                }
-
-                states: [
-                    State {
-                        name: "PRESSED"
-                        PropertyChanges { target: estudar_texto; color: Qt.rgba(0.5, 0.5, 0.5, 1.0)}
-                        PropertyChanges { target: estudar_imagem; rotation: -45 }
-                    },
-                    State {
-                        name: "RELEASED"
-                        PropertyChanges { target: estudar_texto; color: Qt.rgba(0.0, 0.0, 0.0, 1.0)}
-                    }
-                ]
-
-                transitions: [
-                    Transition {
-                        from: "PRESSED"
-                        to: "RELEASED"
-                        ColorAnimation { target: estudar_texto; duration: 100}
-                    },
-                    Transition {
-                        from: "RELEASED"
-                        to: "PRESSED"
-                        ColorAnimation { target: estudar_texto; duration: 100}
-                        RotationAnimation { duration: 1000; direction: RotationAnimation.Counterclockwise }
-                    }
-                ]
-            }
-
-            GridLayout {
-                id: jogar
-                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                columns: 2
-                rows: 1
-
-                Text {
-                    id: jogar_texto
-                    text: qsTr("Jogar")
-                    font.pointSize: 24
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    //anchors.horizontalCenter: parent.horizontalCenter
-                    //y: parent.height/2 + 2*parent.height/10
                 }
 
                 Image {
-                    id: jogar_imagem
-                    source: "Personagem.png"
+                    id: sair
+                    source: "QuitButton.png"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    sourceSize.width: 100
-                    sourceSize.height: 100
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        jogar_texto.color = Qt.rgba(0.5, 0.5, 0.5, 1.0)
 
-                    }
-                    onReleased: {
-                        jogar_texto.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
-                        atividade.visible = true
-                        menuInicial.visible = false
-                        // Para pop-up ainda mostrando a tela QML usa a ordem dos objetos como Z
-                        //menuInicial.visible = false
-                    }
-                }
-            }
-
-            GridLayout {
-                id: quit
-                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                columns: 2
-                rows: 1
-
-                Text {
-                    id: quit_texto
-                    text: qsTr("Quit")
-                    font.pointSize: 24
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    //anchors.horizontalCenter: parent.horizontalCenter
-                    //y: parent.height/2 + 3*parent.height/10
-                }
-                Image {
-                    id: quit_imagem
-                    source: "Arrow.png"
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    sourceSize.width: 100
-                    sourceSize.height: 100
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        quit_texto.color = Qt.rgba(0.5,0.5,0.5,1)
-                    }
-                    onReleased: {
-                        quit_texto.color = Qt.rgba(0.0, 0.0, 0.0, 1.0)
-                        Qt.quit();
+                    MouseArea {
+                        anchors.fill: parent
+                        onPressed: {
+                            sair.source = "QuitButtonClicked.png"
+                        }
+                        onReleased: {
+                            sair.source = "QuitButton.png"
+                            Qt.quit();
+                        }
                     }
                 }
             }
