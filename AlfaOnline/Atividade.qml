@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
+import "resources"
 
 Item {
     id: atividade
@@ -18,7 +19,7 @@ Item {
 
         Image {
             anchors.fill: parent
-            source: "bg.jpg"
+            source: "resources/bg.jpg"
             //source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
 
             GridLayout {
@@ -34,7 +35,7 @@ Item {
                         Image {
                             id: u
                             y: 100
-                            source:"U.png"
+                            source:"resources/U.png"
                             NumberAnimation on x { from:250; to: 1274; duration: 16000; loops: Animation.Infinite }
                             SequentialAnimation on y {
                                 loops: Animation.Infinite
@@ -48,7 +49,7 @@ Item {
                         Image {
                             id: a
                             y: 0
-                            source:"A.png"
+                            source:"resources/A.png"
 
 
                             NumberAnimation on x { from: 0; to: 1024; duration: 16000; loops: Animation.Infinite }
@@ -66,7 +67,7 @@ Item {
                             id: personagem
                             y: 0
                             Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
-                            source:"Personagem.png"
+                            source:"resources/Personagem.png"
                     }
 
 

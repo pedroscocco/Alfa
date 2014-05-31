@@ -507,9 +507,24 @@ compiler_rcc_make_all: qrc_qml.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../AlfaOnline/qml.qrc \
-		../AlfaOnline/Quarto.qml \
+		../AlfaOnline/main.qml \
 		../AlfaOnline/Letra.qml \
-		../AlfaOnline/main.qml
+		../AlfaOnline/Quarto.qml \
+		../AlfaOnline/Atividade.qml \
+		../AlfaOnline/resources/Personagem.png \
+		../AlfaOnline/resources/StudyButton.png \
+		../AlfaOnline/resources/livro.jpg \
+		../AlfaOnline/resources/StudyButtonClicked.png \
+		../AlfaOnline/resources/A.png \
+		../AlfaOnline/resources/PlayButton.png \
+		../AlfaOnline/resources/LogoTelaInicial.png \
+		../AlfaOnline/resources/QuitButton.png \
+		../AlfaOnline/resources/BackgroundTelaInicial.jpg \
+		../AlfaOnline/resources/PlayButtonClicked.png \
+		../AlfaOnline/resources/U.png \
+		../AlfaOnline/resources/bg.jpg \
+		../AlfaOnline/resources/QuitButtonClicked.png \
+		../AlfaOnline/resources/Arrow.png
 	/Users/BetaKiller/Qt5.3.0/5.3/clang_64/bin/rcc -name qml ../AlfaOnline/qml.qrc -o qrc_qml.cpp
 
 compiler_moc_header_make_all:

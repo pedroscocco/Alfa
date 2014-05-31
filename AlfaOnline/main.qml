@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import QtQuick.Window 2.1
 import QtQuick.Layouts 1.1
+import "resources"
 
 Window {
     id: window
@@ -18,7 +19,7 @@ Window {
         Image {
             id: bg_menu
             anchors.fill: parent
-            source: "BackgroundTelaInicial.jpg"
+            source: "resources/BackgroundTelaInicial.jpg"
         }
 
         ColumnLayout {
@@ -27,7 +28,7 @@ Window {
 
             Image {
                 id: titulo
-               source:"LogoTelaInicial.png"
+               source:"resources/LogoTelaInicial.png"
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
                 //anchors.horizontalCenter: parent.horizontalCenter
                 //y: parent.height/2 - parent.height/10
@@ -39,51 +40,51 @@ Window {
 
                 Image {
                     id: estudar
-                    source: "StudyButton.png"
+                    source: "resources/StudyButton.png"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
                     MouseArea {
                         anchors.fill: parent
                         onPressed: {
-                            estudar.source = "StudyButtonClicked.png"
+                            estudar.source = "resources/StudyButtonClicked.png"
                         }
                         onReleased: {
                             quarto.visible = true;
                             menuInicial.visible = false
-                            estudar.source = "StudyButton.png"
+                            estudar.source = "resources/StudyButton.png"
                         }
                     }
                 }
 
                 Image {
                     id: jogar
-                    source: "PlayButton.png"
+                    source: "resources/PlayButton.png"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
 
                     MouseArea {
                         anchors.fill: parent
                         onPressed: {
-                            jogar.source = "PlayButtonClicked.png"
+                            jogar.source = "resources/PlayButtonClicked.png"
                         }
                         onReleased: {
                             atividade.visible = true
                             menuInicial.visible = false
-                            jogar.source = "PlayButton.png"
+                            jogar.source = "resources/PlayButton.png"
                         }
                     }
                 }
 
                 Image {
                     id: sair
-                    source: "QuitButton.png"
+                    source: "resources/QuitButton.png"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
 
                     MouseArea {
                         anchors.fill: parent
                         onPressed: {
-                            sair.source = "QuitButtonClicked.png"
+                            sair.source = "resources/QuitButtonClicked.png"
                         }
                         onReleased: {
-                            sair.source = "QuitButton.png"
+                            sair.source = "resources/QuitButton.png"
                             Qt.quit();
                         }
                     }

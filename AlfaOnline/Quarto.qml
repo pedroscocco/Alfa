@@ -1,15 +1,10 @@
-import QtQuick 2.0
-//import QtQuick.Window 2.1
+import QtQuick 2.1
+import "resources"
 
-//
-// TEM QUE MUDAR DE WINDOW PRA ITEM!!!!
-//
 
 Item {
     id: window
     visible: true
-    //width: Screen.desktopAvailableWidth
-    //height: Screen.desktopAvailableHeight
 
     Rectangle {
         id: telaLetras

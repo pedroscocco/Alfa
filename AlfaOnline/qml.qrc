@@ -1,23 +1,22 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Quarto.qml</file>
-        <file>Letra.qml</file>
-        <file>Captura de Tela.png</file>
-        <file>Personagem.png</file>
         <file>Atividade.qml</file>
-        <file>U.png</file>
-        <file>A.png</file>
-        <file>bg.jpg</file>
-        <file>Arrow.png</file>
-        <file>livro.jpg</file>
-        <file>LogoTelaInicial.png</file>
-        <file>PlayButton.png</file>
-        <file>PlayButtonClicked.png</file>
-        <file>QuitButton.png</file>
-        <file>QuitButtonClicked.png</file>
-        <file>StudyButton.png</file>
-        <file>StudyButtonClicked.png</file>
-        <file>BackgroundTelaInicial.jpg</file>
+        <file>Letra.qml</file>
+        <file>Quarto.qml</file>
+        <file>resources/bg.jpg</file>
+        <file>resources/livro.jpg</file>
+        <file>resources/LogoTelaInicial.png</file>
+        <file>resources/Personagem.png</file>
+        <file>resources/PlayButton.png</file>
+        <file>resources/PlayButtonClicked.png</file>
+        <file>resources/QuitButton.png</file>
+        <file>resources/QuitButtonClicked.png</file>
+        <file>resources/StudyButton.png</file>
+        <file>resources/StudyButtonClicked.png</file>
+        <file>resources/U.png</file>
+        <file>resources/A.png</file>
+        <file>resources/Arrow.png</file>
+        <file>resources/BackgroundTelaInicial.jpg</file>
     </qresource>
 </RCC>

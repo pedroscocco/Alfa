@@ -1,5 +1,6 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import QtQuick.Layouts 1.1
+import "resources"
 
 Item {
     id: letra
@@ -17,7 +18,7 @@ Item {
         // Fazer funcionar com imagens do aplicativo
         Image {
             anchors.fill: parent
-            source: "Captura de Tela.png"
+            source: "resources/A.png"
             //source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
 
             GridLayout {
