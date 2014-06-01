@@ -56,8 +56,8 @@ Item {
 
         Image {
             source: "resources/AirplaneToRoom.png"
-            x: 635
-            y: 0
+            anchors.top: parent.top
+            anchors.right: parent.right
             state: "NEW"
             // Para voltar ao Menu Inicial
             MouseArea {
@@ -78,17 +78,60 @@ Item {
 
         Image {
             source: "resources/BallToRoom.png"
-            x: 635
-            y: 400
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
             state: "NEW"
             // Para voltar ao Menu Inicial
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
                     parent.source = "resources/BallToRoomClicked.png"
-                    parent.y = 402
                     letra.letra = "B"
                     letra.imagem = "resources/LetterB.jpg"
+                    letra.visible = true
+                    if(state == "NEW") {
+                        state = "PRESSED"
+                        telaLetras.letrasVistas += 1
+                        console.log("vistas: ",telaLetras.letrasVistas)
+                    }
+                }
+            }
+        }
+
+        Image {
+            source: "resources/ChairToRoom.png"
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            state: "NEW"
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    parent.source = "resources/ChairToRoomClicked.png"
+                    letra.letra = "C"
+                    letra.imagem = "resources/LetterC.jpg"
+                    letra.visible = true
+                    if(state == "NEW") {
+                        state = "PRESSED"
+                        telaLetras.letrasVistas += 1
+                        console.log("vistas: ",telaLetras.letrasVistas)
+                    }
+                }
+            }
+        }
+
+        Image {
+            source: "resources/DiceToRoom.png"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            state: "NEW"
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    parent.source = "resources/DiceToRoomClicked.png"
+                    letra.letra = "D"
+                    letra.imagem = "resources/LetterD.jpg"
                     letra.visible = true
                     if(state == "NEW") {
                         state = "PRESSED"
