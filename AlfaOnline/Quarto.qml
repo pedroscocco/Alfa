@@ -14,6 +14,9 @@ Item {
 
         property int letraSelecionada: 0
         property int letrasVistas: 0
+
+        onLetrasVistasChanged: console.log("OLA?")//telaLetras.letrasVistas)//mostrarPopup()
+
 /*      Ignorando por hora
         property list<Item> letras: [
             Letra {
@@ -41,6 +44,7 @@ Item {
         }
 
         Image {
+            id: airplane
             source: "resources/AirplaneToRoom.png"
             anchors.top: parent.top
             anchors.right: parent.right
@@ -157,6 +161,14 @@ Item {
 
         Letra {
             visible: false
+        }
+        function mostrarPopup() {
+            telaLetras.letrasVistas += 1
+            if (telaLetras.letrasVistas > 0) {
+                // Mostrar popup
+                console.log("LOG LOG LOG LET's KEEP LOGGING!")
+                //telaLetras.letrasVistas = 0
+            }
         }
 
     }
