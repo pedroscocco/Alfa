@@ -12,7 +12,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        anchors.margins: 50
+        anchors.margins: 100
         color: Qt.rgba(0,0,0,0.5)
 
         // Fazer funcionar com imagens do aplicativo

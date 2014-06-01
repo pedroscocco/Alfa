@@ -39,8 +39,8 @@ Item {
                             NumberAnimation on x { from:250; to: 1274; duration: 16000; loops: Animation.Infinite }
                             SequentialAnimation on y {
                                 loops: Animation.Infinite
-                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutQuad }
-                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutQuad }
+                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutBack }
+                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutBack }
                             }
 
 
@@ -55,8 +55,8 @@ Item {
                             NumberAnimation on x { from: 0; to: 1024; duration: 16000; loops: Animation.Infinite }
                             SequentialAnimation on y {
                                 loops: Animation.Infinite
-                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutQuad }
-                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutQuad }
+                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutBack }
+                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutBack }
                             }
                         }
 
@@ -68,6 +68,7 @@ Item {
                             y: 0
                             Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
                             source:"resources/Personagem.png"
+
                     }
 
 
@@ -77,9 +78,6 @@ Item {
         MouseArea {
             anchors.fill: parent
             onPressed:  animatePersonagem.start()
-            onReleased: animatePersonagemToBottom.start()
-
-
         }
 
         NumberAnimation {
@@ -87,18 +85,18 @@ Item {
             target: personagem
             property: "y"
             from:personagem.y
-            to: y + 150
+            to: personagem.y - 150
             duration: 1600
             easing.type: Easing.InOutQuad
-
+            onStopped: animatePersonagemToBottom.start()
         }
 
         NumberAnimation {
             id: animatePersonagemToBottom
             target: personagem
             property: "y"
-            from: y+150
-            to: personagem.y
+            from: personagem.y
+            to: personagem.y + 150
             duration: 1600
             easing.type: Easing.InOutQuad
         }

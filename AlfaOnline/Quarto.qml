@@ -3,7 +3,7 @@ import "resources"
 
 
 Item {
-    id: window
+    id: janelaQuarto
     visible: true
 
     Rectangle {
@@ -33,6 +33,10 @@ Item {
 
             }
         ]
+
+        Image {
+            source: "resources/bg.jpg"
+        }
     }
 
 }
