@@ -17,5 +17,33 @@
         <file>resources/A.png</file>
         <file>resources/Arrow.png</file>
         <file>resources/BackgroundTelaInicial.jpg</file>
+        <file>resources/AirplaneToRoom.png</file>
+        <file>resources/AirplaneToRoomClicked.png</file>
+        <file>resources/AOk.png</file>
+        <file>resources/AWrong.png</file>
+        <file>resources/B.png</file>
+        <file>resources/BackgroundPlay.jpg</file>
+        <file>resources/BackgroundRoom.jpg</file>
+        <file>resources/BallToRoom.png</file>
+        <file>resources/BallToRoomClicked.png</file>
+        <file>resources/BHeader.png</file>
+        <file>resources/BOk.png</file>
+        <file>resources/BWrong.png</file>
+        <file>resources/C.png</file>
+        <file>resources/ChairToRoom.png</file>
+        <file>resources/ChairToRoomClicked.png</file>
+        <file>resources/CHeader.png</file>
+        <file>resources/COk.png</file>
+        <file>resources/CWrong.png</file>
+        <file>resources/D.png</file>
+        <file>resources/DHeader.png</file>
+        <file>resources/DiceToRoom.png</file>
+        <file>resources/DiceToRoomClicked.png</file>
+        <file>resources/DOk.png</file>
+        <file>resources/DWrong.png</file>
+        <file>resources/LetterA.jpg</file>
+        <file>resources/LetterB.jpg</file>
+        <file>resources/LetterC.jpg</file>
+        <file>resources/LetterD.jpg</file>
     </qresource>
 </RCC>

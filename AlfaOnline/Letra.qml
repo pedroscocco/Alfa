@@ -6,7 +6,7 @@ Item {
     id: letra
 
     property string letra: "A"  // Qual e a letra
-    property string imagem: "/" // Caminho para a imagem
+    property string imagem: "resources/LetterA.jpg" // Caminho para a imagem
     property int posLetra: 0    // Em qual quadrante da tela a letra vai aparecer
                                 // Provavel que não vá usar
 
@@ -14,13 +14,14 @@ Item {
         anchors.fill: parent
         anchors.margins: 100
         color: Qt.rgba(0,0,0,0.5)
+        property string imagem: parent.imagem
 
         // Fazer funcionar com imagens do aplicativo
         Image {
             anchors.fill: parent
-            source: "resources/A.png"
-            //source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
+            source: parent.imagem
 
+            /*
             GridLayout {
                 id: grade
                 anchors.fill: parent
@@ -49,6 +50,20 @@ Item {
                     text: qsTr("D")
                     color: "Red"
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                }
+            }
+            */
+        }
+        Image {
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            anchors.bottomMargin: 10
+            anchors.rightMargin: 10
+            source: "resources/Arrow.png"
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    letra.visible = false;
                 }
             }
         }

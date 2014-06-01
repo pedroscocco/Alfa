@@ -35,7 +35,7 @@ Item {
                         Image {
                             id: u
                             y: 100
-                            source:"resources/U.png"
+                            source:"resources/B.png"
                             NumberAnimation on x { from:250; to: 1274; duration: 16000; loops: Animation.Infinite }
                             SequentialAnimation on y {
                                 loops: Animation.Infinite
