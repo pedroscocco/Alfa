@@ -15,6 +15,7 @@ Window {
     Rectangle {
         id: menuInicial
         anchors.fill: parent
+        onVisibleChanged: visibilidadeMenuInicial()
 
         Image {
             id: bg_menu
@@ -98,6 +99,7 @@ Window {
         id: quarto
         anchors.fill: parent
         visible: false
+        onVisibleChanged: visibilidadeQuarto()
     }
 
     // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
@@ -105,6 +107,7 @@ Window {
         id: letra
         anchors.fill: parent
         visible: false
+        onVisibleChanged: visibilidadeLetra() // Exemplo
     }
 
     // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
@@ -112,5 +115,36 @@ Window {
         id: atividade
         anchors.fill: parent
         visible: false
+        onVisibleChanged: visibilidadeAtividade()
     }
+
+   // Funcoes de controle de visibilidade
+   function visibilidadeMenuInicial() {
+
+   }
+
+   function visibilidadeLetra() {
+
+   }
+
+   function visibilidadeQuarto() {
+       if (quarto.visible) {
+           menuInicial.visible = false;
+           atividade.visible = false;
+       }
+       else {
+           menuInicial.visible = true;
+       }
+   }
+
+   function visibilidadeAtividade() {
+       if (atividade.visible) {
+           menuInicial.visible = false;
+           quarto.visible = false;
+       }
+       else {
+           menuInicial.visible = true;
+       }
+   }
+
 }
