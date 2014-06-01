@@ -5,6 +5,7 @@ import "resources"
 Item {
     id: quarto
     visible: true
+    focus: true
 
     Rectangle {
         id: telaLetras
@@ -37,21 +38,6 @@ Item {
         Image {
             anchors.fill: parent
             source: "resources/BackgroundRoom.jpg"
-
-
-        }
-
-        Image {
-            source: "resources/Arrow.png"
-            anchors.right: parent.right
-            y: 3*parent.height/4 - height/2
-            // Para voltar ao Menu Inicial
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    quarto.visible = false;
-                }
-            }
         }
 
         Image {
@@ -63,14 +49,17 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    parent.source = "resources/AirplaneToRoomClicked.png"
-                    letra.letra = "A"
-                    letra.imagem = "resources/LetterA.jpg"
-                    letra.visible = true
-                    if(state == "NEW") {
-                        state = "PRESSED"
-                        telaLetras.letrasVistas += 1
-                        console.log("vistas: ",telaLetras.letrasVistas)
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/AirplaneToRoomClicked.png"
+                        letra.letra = "A"
+                        letra.imagem = "resources/LetterA.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
+                        }
                     }
                 }
             }
@@ -85,14 +74,17 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    parent.source = "resources/BallToRoomClicked.png"
-                    letra.letra = "B"
-                    letra.imagem = "resources/LetterB.jpg"
-                    letra.visible = true
-                    if(state == "NEW") {
-                        state = "PRESSED"
-                        telaLetras.letrasVistas += 1
-                        console.log("vistas: ",telaLetras.letrasVistas)
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/BallToRoomClicked.png"
+                        letra.letra = "B"
+                        letra.imagem = "resources/LetterB.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
+                        }
                     }
                 }
             }
@@ -107,14 +99,17 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    parent.source = "resources/ChairToRoomClicked.png"
-                    letra.letra = "C"
-                    letra.imagem = "resources/LetterC.jpg"
-                    letra.visible = true
-                    if(state == "NEW") {
-                        state = "PRESSED"
-                        telaLetras.letrasVistas += 1
-                        console.log("vistas: ",telaLetras.letrasVistas)
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/ChairToRoomClicked.png"
+                        letra.letra = "C"
+                        letra.imagem = "resources/LetterC.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
+                        }
                     }
                 }
             }
@@ -129,14 +124,32 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    parent.source = "resources/DiceToRoomClicked.png"
-                    letra.letra = "D"
-                    letra.imagem = "resources/LetterD.jpg"
-                    letra.visible = true
-                    if(state == "NEW") {
-                        state = "PRESSED"
-                        telaLetras.letrasVistas += 1
-                        console.log("vistas: ",telaLetras.letrasVistas)
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/DiceToRoomClicked.png"
+                        letra.letra = "D"
+                        letra.imagem = "resources/LetterD.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
+                        }
+                    }
+                }
+            }
+        }
+
+        Image {
+            source: "resources/Arrow.png"
+            anchors.right: parent.right
+            y: 3*parent.height/4 - height/2
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    if(quarto.focus) {
+                        quarto.visible = false;
                     }
                 }
             }
@@ -145,6 +158,7 @@ Item {
         Letra {
             visible: false
         }
+
     }
 
 }

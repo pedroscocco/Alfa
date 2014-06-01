@@ -64,6 +64,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     letra.visible = false;
+                    quarto.focus = true
                 }
             }
         }
