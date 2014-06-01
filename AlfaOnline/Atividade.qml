@@ -87,7 +87,7 @@ Item {
             from:personagem.y
             to: personagem.y - 150
             duration: 1600
-            easing.type: Easing.InOutQuad
+            easing.type: Easing.OutQuad
             onStopped: animatePersonagemToBottom.start()
         }
 
@@ -98,7 +98,7 @@ Item {
             from: personagem.y
             to: personagem.y + 150
             duration: 1600
-            easing.type: Easing.InOutQuad
+            easing.type: Easing.InQuad
         }
     }
 }
