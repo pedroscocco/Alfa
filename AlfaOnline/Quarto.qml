@@ -145,16 +145,6 @@ Item {
             }
         }
 
-        Letra {
-            visible: false
-        }
-
-        Sugestao {
-            visible: false
-        }
-
-
-
     }
 
 }

@@ -7,26 +7,30 @@ Item {
 
     Rectangle {
         id: popup
+        anchors.fill: parent
         anchors.centerIn: parent
-        anchors.margins: 150
-        color: Qt.rgba(0,0,0,0.5)
+        anchors.margins: 100
+        color: Qt.rgba(1,1,1,0.9)
 
         // Fazer funcionar com imagens do aplicativo
-        Image {
-            anchors.fill: parent
-            source: "resources/BackgroundTelaInicial.jpg"
-        }
+//        Image {
+//            anchors.fill: parent
+//            source: "resources/BackgroundTelaInicial.jpg"
+//        }
 
         ColumnLayout {
             anchors.fill: parent
 
-            /*
-            Image {
-                source: "resources/LogoTelaInicial.png"
-                height: 10
-                width: 10
+            Rectangle {
+                height: popup.height/2
+                width: popup.width
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-            }*/
+                Image {
+                    anchors.fill: parent
+                    source: "resources/LogoTelaInicial.png"
+                }
+            }
+
             RowLayout {
                 Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
                 Image {

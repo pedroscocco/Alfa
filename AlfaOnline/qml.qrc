@@ -56,5 +56,7 @@
         <file>resources/PlayAgainButtonClicked.png</file>
         <file>LetraVoadora.qml</file>
         <file>mylogic.js</file>
+        <file>resources/PlayNextButton.png</file>
+        <file>resources/PlayNextButtonClicked.png</file>
     </qresource>
 </RCC>
