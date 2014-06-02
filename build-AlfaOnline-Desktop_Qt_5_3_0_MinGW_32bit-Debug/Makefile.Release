@@ -105,15 +105,50 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_qml.cpp
 release/qrc_qml.cpp: ../AlfaOnline/qml.qrc \
 		../AlfaOnline/Letra.qml \
-		../AlfaOnline/U.png \
-		../AlfaOnline/livro.jpg \
 		../AlfaOnline/Atividade.qml \
-		../AlfaOnline/Personagem.png \
-		../AlfaOnline/bg.jpg \
 		../AlfaOnline/Quarto.qml \
-		../AlfaOnline/A.png \
-		../AlfaOnline/Arrow.png \
-		../AlfaOnline/main.qml
+		../AlfaOnline/main.qml \
+		../AlfaOnline/resources/QuitButtonClicked.png \
+		../AlfaOnline/resources/COk.png \
+		../AlfaOnline/resources/DWrong.png \
+		../AlfaOnline/resources/BackgroundRoom.jpg \
+		../AlfaOnline/resources/LetterD.jpg \
+		../AlfaOnline/resources/livro.jpg \
+		../AlfaOnline/resources/BallToRoomClicked.png \
+		../AlfaOnline/resources/DiceToRoomClicked.png \
+		../AlfaOnline/resources/ChairToRoomClicked.png \
+		../AlfaOnline/resources/LetterC.jpg \
+		../AlfaOnline/resources/bg.jpg \
+		../AlfaOnline/resources/AOk.png \
+		../AlfaOnline/resources/CHeader.png \
+		../AlfaOnline/resources/LetterB.jpg \
+		../AlfaOnline/resources/BHeader.png \
+		../AlfaOnline/resources/BOk.png \
+		../AlfaOnline/resources/StudyButtonClicked.png \
+		../AlfaOnline/resources/LetterA.jpg \
+		../AlfaOnline/resources/CWrong.png \
+		../AlfaOnline/resources/D.png \
+		../AlfaOnline/resources/StudyButton.png \
+		../AlfaOnline/resources/AirplaneToRoom.png \
+		../AlfaOnline/resources/Arrow.png \
+		../AlfaOnline/resources/C.png \
+		../AlfaOnline/resources/BackgroundTelaInicial.jpg \
+		../AlfaOnline/resources/DOk.png \
+		../AlfaOnline/resources/PlayButton.png \
+		../AlfaOnline/resources/AirplaneToRoomClicked.png \
+		../AlfaOnline/resources/B.png \
+		../AlfaOnline/resources/AWrong.png \
+		../AlfaOnline/resources/ChairToRoom.png \
+		../AlfaOnline/resources/DHeader.png \
+		../AlfaOnline/resources/LogoTelaInicial.png \
+		../AlfaOnline/resources/A.png \
+		../AlfaOnline/resources/Personagem.png \
+		../AlfaOnline/resources/BackgroundPlay.jpg \
+		../AlfaOnline/resources/BWrong.png \
+		../AlfaOnline/resources/PlayButtonClicked.png \
+		../AlfaOnline/resources/DiceToRoom.png \
+		../AlfaOnline/resources/QuitButton.png \
+		../AlfaOnline/resources/BallToRoom.png
 	C:\Qt\5.3\mingw482_32\bin\rcc.exe -name qml ..\AlfaOnline\qml.qrc -o release\qrc_qml.cpp
 
 compiler_moc_header_make_all:

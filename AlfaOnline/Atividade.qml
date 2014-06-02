@@ -19,14 +19,15 @@ Item {
 
         Image {
             anchors.fill: parent
-            source: "resources/bg.jpg"
+            source: "resources/BackgroundPlay.jpg"
             //source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
 
             GridLayout {
                 id: grade
                 anchors.fill: parent
                 columns: 1
-                rows: 2
+                rows: 3
+
 
 
 
@@ -34,7 +35,7 @@ Item {
 
                         Image {
                             id: u
-                            y: 100
+                            y: 280
                             source:"resources/B.png"
                             NumberAnimation on x { from:250; to: 1274; duration: 16000; loops: Animation.Infinite }
                             SequentialAnimation on y {
@@ -48,7 +49,7 @@ Item {
 
                         Image {
                             id: a
-                            y: 0
+                            y: 180
                             source:"resources/A.png"
 
 
