@@ -87,18 +87,32 @@ Item {
                 columns: 1
                 rows: 3
                 Image {
-                        id: personagem
-                        y: 0
-                        Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
-                        source:"resources/Personagem.png"
+                    id: personagem
+                    y: 0
+                    Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
+                    source:"resources/Personagem.png"
+                    state: "NOCHAO"
+                    states: [
+                        State {
+                            name: "NOCHAO"; PropertyChanges {target: personagem}
+                        },
+                        State {
+                            name: "PULANDO"; PropertyChanges {target: personagem}
+                        }
 
+                    ]
                 }
             }
         }
 
         MouseArea {
             anchors.fill: parent
-            onPressed:  animatePersonagem.start()
+            onPressed: {
+                if(personagem.state == "NOCHAO") {
+                    personagem.state = "PULANDO"
+                    animatePersonagem.start()
+                }
+            }
         }
 
         NumberAnimation {
@@ -120,6 +134,9 @@ Item {
             to: personagem.y + 150
             duration: 500
             easing.type: Easing.InQuad
+            onStopped: {
+                personagem.state = "NOCHAO"
+            }
         }
     }
 }
