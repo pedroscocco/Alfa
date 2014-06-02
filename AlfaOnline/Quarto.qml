@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import "resources"
-
+import "mylogic.js" as Logic
 
 Item {
     id: quarto
@@ -15,28 +15,6 @@ Item {
         property int letraSelecionada: 0
         property int letrasVistas: 0
 
-        onLetrasVistasChanged: console.log("OLA?")//telaLetras.letrasVistas)//mostrarPopup()
-
-/*      Ignorando por hora
-        property list<Item> letras: [
-            Letra {
-                id: letraA
-                anchors.fill: parent
-                visible: true
-            },
-            Letra {
-
-            },
-            Letra {
-
-            },
-            Letra {
-
-            },
-            Letra {
-
-            }
-        ]*/
 
         Image {
             anchors.fill: parent
@@ -54,6 +32,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
+                        sugestao.visible=Logic.mostrarPopup()
                         quarto.focus = false
                         parent.source = "resources/AirplaneToRoomClicked.png"
                         letra.letra = "A"
@@ -79,6 +58,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
+                      sugestao.visible=Logic.mostrarPopup()
                         quarto.focus = false
                         parent.source = "resources/BallToRoomClicked.png"
                         letra.letra = "B"
@@ -104,6 +84,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
+                        sugestao.visible=Logic.mostrarPopup()
                         quarto.focus = false
                         parent.source = "resources/ChairToRoomClicked.png"
                         letra.letra = "C"
@@ -129,6 +110,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
+                        sugestao.visible=Logic.mostrarPopup()
                         quarto.focus = false
                         parent.source = "resources/DiceToRoomClicked.png"
                         letra.letra = "D"
@@ -165,19 +147,10 @@ Item {
         }
 
         Sugestao {
-            anchors.fill: parent
             visible: false
         }
 
-        function mostrarPopup() {
-            telaLetras.letrasVistas += 1
-            if (telaLetras.letrasVistas > 0) {
-                Sugestao.visible = true
-                Quarto.focus = false
-                console.log("LOG LOG LOG LET's KEEP LOGGING!")
-                //telaLetras.letrasVistas = 0
-            }
-        }
+
 
     }
 

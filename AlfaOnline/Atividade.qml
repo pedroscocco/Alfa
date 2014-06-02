@@ -4,11 +4,63 @@ import "resources"
 
 Item {
     id: atividade
-
+    state: "PARADO"
     property string letra: "A"  // Qual e a letra
     property string imagem: "/" // Caminho para a imagem
     property int posLetra: 0    // Em qual quadrante da tela a letra vai aparecer
                                 // Provavel que não vá usar
+
+    property int cont: 0
+
+    ListModel {
+        id: listaLetras
+    }
+
+
+    Timer {
+        id: timer
+        interval: 5000
+        running: false
+        repeat: true
+        onTriggered: tick()
+    }
+
+    onStateChanged: {
+        if (state == "INICIADO") {
+            timer.running = true;
+            var componente = Qt.createComponent("LetraVoadora.qml")
+            componente.createObject(backgroundAtividade,{ "id": "letra" + atividade.cont, "x": -100, "y": 90})
+            listaLetras.append(componente)
+        }
+    }
+
+    function tick() {
+        if (atividade.state != "PARADO") {
+            var componente = Qt.createComponent("LetraVoadora.qml")
+            componente.createObject(backgroundAtividade,{ "x": -100, "y": 90})
+            listaLetras.append(componente)
+
+            //Precisa conseguir pegar as instancias dos objetos em especial o x e y
+            console.log(listaLetras.get(1).letraVoadora.x)
+
+            if (listaLetras.count > 0) {
+                for (var i = 0; i < listaLetras; i++) {
+                    colisao(i)
+                    console.log(i)
+                }
+            }
+
+        }
+    }
+
+    // Precisa rever a regra da colisao dentro do if
+    function colisao (index) {
+        console.log(index)
+        console.log(listaLetras.get(index).x);
+        if(listaLetras.get(index).x >= personagem.x-200 && listaLetras.get(index).x <= personagem.x+200 && listaLetras.get(index).y <= personagem.y + 2000) {
+            console.log("HIT");
+        }
+    }
 
     Rectangle {
         anchors.fill: parent
@@ -18,61 +70,23 @@ Item {
         // Fazer funcionar com imagens do aplicativo
 
         Image {
+            id: backgroundAtividade
             anchors.fill: parent
             source: "resources/BackgroundPlay.jpg"
-            //source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
+
 
             GridLayout {
                 id: grade
                 anchors.fill: parent
                 columns: 1
                 rows: 3
+                Image {
+                        id: personagem
+                        y: 0
+                        Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
+                        source:"resources/Personagem.png"
 
-
-
-
-                    Row {
-
-                        Image {
-                            id: u
-                            y: 280
-                            source:"resources/B.png"
-                            NumberAnimation on x { from:250; to: 1274; duration: 16000; loops: Animation.Infinite }
-                            SequentialAnimation on y {
-                                loops: Animation.Infinite
-                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutBack }
-                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutBack }
-                            }
-
-
-                        }
-
-                        Image {
-                            id: a
-                            y: 180
-                            source:"resources/A.png"
-
-
-                            NumberAnimation on x { from: 0; to: 1024; duration: 16000; loops: Animation.Infinite }
-                            SequentialAnimation on y {
-                                loops: Animation.Infinite
-                                NumberAnimation { from: y - 50; to: y + 50; duration: 1600; easing.type: Easing.InOutBack }
-                                NumberAnimation { from: y + 50; to: y - 50; duration: 1600; easing.type: Easing.InOutBack }
-                            }
-                        }
-
-
-                    }
-
-                    Image {
-                            id: personagem
-                            y: 0
-                            Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
-                            source:"resources/Personagem.png"
-
-                    }
-
-
+                }
             }
         }
 
@@ -87,7 +101,7 @@ Item {
             property: "y"
             from:personagem.y
             to: personagem.y - 150
-            duration: 1600
+            duration: 500
             easing.type: Easing.OutQuad
             onStopped: animatePersonagemToBottom.start()
         }
@@ -98,7 +112,7 @@ Item {
             property: "y"
             from: personagem.y
             to: personagem.y + 150
-            duration: 1600
+            duration: 500
             easing.type: Easing.InQuad
         }
     }
