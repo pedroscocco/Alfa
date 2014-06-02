@@ -73,7 +73,7 @@ Item {
             id: backgroundAtividade
             anchors.fill: parent
             source: "resources/BackgroundPlay.jpg"
-
+			//source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
 
             GridLayout {
                 id: grade
