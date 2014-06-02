@@ -507,23 +507,51 @@ compiler_rcc_make_all: qrc_qml.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../AlfaOnline/qml.qrc \
-		../AlfaOnline/main.qml \
-		../AlfaOnline/Letra.qml \
-		../AlfaOnline/Atividade.qml \
 		../AlfaOnline/Quarto.qml \
+		../AlfaOnline/main.qml \
+		../AlfaOnline/Atividade.qml \
+		../AlfaOnline/Letra.qml \
+		../AlfaOnline/resources/ChairToRoomClicked.png \
+		../AlfaOnline/resources/AirplaneToRoom.png \
+		../AlfaOnline/resources/D.png \
 		../AlfaOnline/resources/PlayButton.png \
-		../AlfaOnline/resources/StudyButtonClicked.png \
-		../AlfaOnline/resources/A.png \
 		../AlfaOnline/resources/Arrow.png \
-		../AlfaOnline/resources/QuitButton.png \
-		../AlfaOnline/resources/PlayButtonClicked.png \
-		../AlfaOnline/resources/BackgroundTelaInicial.jpg \
-		../AlfaOnline/resources/livro.jpg \
 		../AlfaOnline/resources/QuitButtonClicked.png \
-		../AlfaOnline/resources/bg.jpg \
+		../AlfaOnline/resources/C.png \
 		../AlfaOnline/resources/Personagem.png \
+		../AlfaOnline/resources/DWrong.png \
+		../AlfaOnline/resources/COk.png \
+		../AlfaOnline/resources/BackgroundPlay.jpg \
+		../AlfaOnline/resources/B.png \
+		../AlfaOnline/resources/BallToRoomClicked.png \
+		../AlfaOnline/resources/DiceToRoom.png \
+		../AlfaOnline/resources/DHeader.png \
+		../AlfaOnline/resources/AWrong.png \
+		../AlfaOnline/resources/A.png \
+		../AlfaOnline/resources/BallToRoom.png \
+		../AlfaOnline/resources/QuitButton.png \
+		../AlfaOnline/resources/bg.jpg \
+		../AlfaOnline/resources/StudyButton.png \
+		../AlfaOnline/resources/AOk.png \
+		../AlfaOnline/resources/PlayButtonClicked.png \
 		../AlfaOnline/resources/LogoTelaInicial.png \
-		../AlfaOnline/resources/StudyButton.png
+		../AlfaOnline/resources/BackgroundRoom.jpg \
+		../AlfaOnline/resources/CWrong.png \
+		../AlfaOnline/resources/BOk.png \
+		../AlfaOnline/resources/livro.jpg \
+		../AlfaOnline/resources/LetterD.jpg \
+		../AlfaOnline/resources/StudyButtonClicked.png \
+		../AlfaOnline/resources/BackgroundTelaInicial.jpg \
+		../AlfaOnline/resources/ChairToRoom.png \
+		../AlfaOnline/resources/LetterC.jpg \
+		../AlfaOnline/resources/DOk.png \
+		../AlfaOnline/resources/AirplaneToRoomClicked.png \
+		../AlfaOnline/resources/DiceToRoomClicked.png \
+		../AlfaOnline/resources/CHeader.png \
+		../AlfaOnline/resources/LetterB.jpg \
+		../AlfaOnline/resources/BHeader.png \
+		../AlfaOnline/resources/BWrong.png \
+		../AlfaOnline/resources/LetterA.jpg
 	/Users/BetaKiller/Qt5.3.0/5.3/clang_64/bin/rcc -name qml ../AlfaOnline/qml.qrc -o qrc_qml.cpp
 
 compiler_moc_header_make_all:

@@ -14,6 +14,9 @@ Item {
 
         property int letraSelecionada: 0
         property int letrasVistas: 0
+
+        onLetrasVistasChanged: console.log("OLA?")//telaLetras.letrasVistas)//mostrarPopup()
+
 /*      Ignorando por hora
         property list<Item> letras: [
             Letra {
@@ -36,113 +39,121 @@ Item {
         ]*/
 
         Image {
-            id: bg
             anchors.fill: parent
             source: "resources/BackgroundRoom.jpg"
+        }
 
-            Image {
-                source: "resources/AirplaneToRoom.png"
-                anchors.top: parent.top
-                anchors.right: parent.right
-                state: "NEW"
-                // Para voltar ao Menu Inicial
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        if(quarto.focus) {
-                            quarto.focus = false
-                            parent.source = "resources/AirplaneToRoomClicked.png"
-                            letra.letra = "A"
-                            letra.imagem = "resources/LetterA.jpg"
-                            letra.visible = true
-                            if(state == "NEW") {
-                                state = "PRESSED"
-                            }
+        Image {
+            id: airplane
+            source: "resources/AirplaneToRoom.png"
+            anchors.top: parent.top
+            anchors.right: parent.right
+            state: "NEW"
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/AirplaneToRoomClicked.png"
+                        letra.letra = "A"
+                        letra.imagem = "resources/LetterA.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
                         }
                     }
                 }
             }
+        }
 
-            Image {
-                source: "resources/BallToRoom.png"
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-                state: "NEW"
-                // Para voltar ao Menu Inicial
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        if(quarto.focus) {
-                            quarto.focus = false
-                            parent.source = "resources/BallToRoomClicked.png"
-                            letra.letra = "B"
-                            letra.imagem = "resources/LetterB.jpg"
-                            letra.visible = true
-                            if(state == "NEW") {
-                                state = "PRESSED"
-                            }
+        Image {
+            source: "resources/BallToRoom.png"
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            state: "NEW"
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/BallToRoomClicked.png"
+                        letra.letra = "B"
+                        letra.imagem = "resources/LetterB.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
                         }
                     }
                 }
             }
+        }
 
-            Image {
-                source: "resources/ChairToRoom.png"
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                state: "NEW"
-                // Para voltar ao Menu Inicial
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        if(quarto.focus) {
-                            quarto.focus = false
-                            parent.source = "resources/ChairToRoomClicked.png"
-                            letra.letra = "C"
-                            letra.imagem = "resources/LetterC.jpg"
-                            letra.visible = true
-                            if(state == "NEW") {
-                                state = "PRESSED"
-                            }
+        Image {
+            source: "resources/ChairToRoom.png"
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            state: "NEW"
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/ChairToRoomClicked.png"
+                        letra.letra = "C"
+                        letra.imagem = "resources/LetterC.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
                         }
                     }
                 }
             }
+        }
 
-            Image {
-                source: "resources/DiceToRoom.png"
-                anchors.top: parent.top
-                anchors.left: parent.left
-                state: "NEW"
-                // Para voltar ao Menu Inicial
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        if(quarto.focus) {
-                            quarto.focus = false
-                            parent.source = "resources/DiceToRoomClicked.png"
-                            letra.letra = "D"
-                            letra.imagem = "resources/LetterD.jpg"
-                            letra.visible = true
-                            if(state == "NEW") {
-                                state = "PRESSED"
-                            }
+        Image {
+            source: "resources/DiceToRoom.png"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            state: "NEW"
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    if(quarto.focus) {
+                        quarto.focus = false
+                        parent.source = "resources/DiceToRoomClicked.png"
+                        letra.letra = "D"
+                        letra.imagem = "resources/LetterD.jpg"
+                        letra.visible = true
+                        if(state == "NEW") {
+                            state = "PRESSED"
+                            telaLetras.letrasVistas += 1
+                            console.log("vistas: ",telaLetras.letrasVistas)
                         }
                     }
                 }
             }
+        }
 
-            Image {
-                source: "resources/Arrow.png"
-                anchors.right: parent.right
-                y: 3*parent.height/4 - height/2
-                // Para voltar ao Menu Inicial
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        if(quarto.focus) {
-                            quarto.visible = false;
-                        }
+        Image {
+            source: "resources/Arrow.png"
+            anchors.right: parent.right
+            y: 3*parent.height/4 - height/2
+            // Para voltar ao Menu Inicial
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    if(quarto.focus) {
+                        quarto.visible = false;
                     }
                 }
             }
@@ -150,6 +161,14 @@ Item {
 
         Letra {
             visible: false
+        }
+        function mostrarPopup() {
+            telaLetras.letrasVistas += 1
+            if (telaLetras.letrasVistas > 0) {
+                // Mostrar popup
+                console.log("LOG LOG LOG LET's KEEP LOGGING!")
+                //telaLetras.letrasVistas = 0
+            }
         }
 
     }
