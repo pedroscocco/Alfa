@@ -29,7 +29,7 @@ Item {
         if (state == "INICIADO") {
             timer.running = true;
             var componente = Qt.createComponent("LetraVoadora.qml")
-            componente.createObject(backgroundAtividade,{ "id": "letra" + atividade.cont, "x": -100, "y": 90})
+            componente.createObject(backgroundAtividade,{ "id": "letra" + atividade.cont, "x": -100, "y": 180})
             listaLetras.append(componente)
         }
     }
@@ -37,11 +37,12 @@ Item {
     function tick() {
         if (atividade.state != "PARADO") {
             var componente = Qt.createComponent("LetraVoadora.qml")
-            componente.createObject(backgroundAtividade,{ "x": -100, "y": 90})
+            componente.createObject(backgroundAtividade,{ "x": -100, "y": 180})
             listaLetras.append(componente)
 
             //Precisa conseguir pegar as instancias dos objetos em especial o x e y
-            console.log(listaLetras.get(1).letraVoadora.x)
+            console.log(listaLetras.get(1).x)
+            console.log(listaLetras.count)
 
             if (listaLetras.count > 0) {
                 for (var i = 0; i < listaLetras; i++) {
@@ -74,6 +75,11 @@ Item {
             anchors.fill: parent
             source: "resources/BackgroundPlay.jpg"
 			//source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
+
+            Image {
+                id:header
+                source: ""
+            }
 
             GridLayout {
                 id: grade

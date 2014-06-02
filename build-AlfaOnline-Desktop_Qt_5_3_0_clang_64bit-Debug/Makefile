@@ -507,61 +507,62 @@ compiler_rcc_make_all: qrc_qml.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../AlfaOnline/qml.qrc \
-		../AlfaOnline/Quarto.qml \
-		../AlfaOnline/Letra.qml \
 		../AlfaOnline/LetraVoadora.qml \
-		../AlfaOnline/Atividade.qml \
 		../AlfaOnline/main.qml \
+		../AlfaOnline/Atividade.qml \
+		../AlfaOnline/mylogic.js \
+		../AlfaOnline/Letra.qml \
+		../AlfaOnline/Quarto.qml \
 		../AlfaOnline/Sugestao.qml \
-		../AlfaOnline/resources/Result1.jpg \
-		../AlfaOnline/resources/LetterA.jpg \
-		../AlfaOnline/resources/ChairToRoomClicked.png \
-		../AlfaOnline/resources/BOk.png \
-		../AlfaOnline/resources/A.png \
-		../AlfaOnline/resources/DiceToRoomClicked.png \
-		../AlfaOnline/resources/LogoTelaInicial.png \
-		../AlfaOnline/resources/PlayButton.png \
-		../AlfaOnline/resources/Result0.jpg \
-		../AlfaOnline/resources/livro.jpg \
-		../AlfaOnline/resources/BackgroundRoom.jpg \
-		../AlfaOnline/resources/ChairToRoom.png \
-		../AlfaOnline/resources/Personagem.png \
-		../AlfaOnline/resources/StudyButtonClicked.png \
+		../AlfaOnline/resources/BallToRoomClicked.png \
 		../AlfaOnline/resources/PlayAgainButton.png \
+		../AlfaOnline/resources/StudyButton.png \
+		../AlfaOnline/resources/Result0.jpg \
+		../AlfaOnline/resources/BackgroundTelaInicial.jpg \
+		../AlfaOnline/resources/BOk.png \
+		../AlfaOnline/resources/Quit.png \
+		../AlfaOnline/resources/AirplaneToRoomClicked.png \
+		../AlfaOnline/resources/PlayButtonClicked.png \
 		../AlfaOnline/resources/BWrong.png \
-		../AlfaOnline/resources/DiceToRoom.png \
+		../AlfaOnline/resources/QuitButton.png \
+		../AlfaOnline/resources/COk.png \
+		../AlfaOnline/resources/Arrow.png \
+		../AlfaOnline/resources/QuitButtonClicked.png \
+		../AlfaOnline/resources/D.png \
+		../AlfaOnline/resources/livro.jpg \
 		../AlfaOnline/resources/DHeader.png \
 		../AlfaOnline/resources/CHeader.png \
-		../AlfaOnline/resources/BallToRoom.png \
-		../AlfaOnline/resources/QuitButton.png \
-		../AlfaOnline/resources/Quit.png \
-		../AlfaOnline/resources/AOk.png \
-		../AlfaOnline/resources/BallToRoomClicked.png \
-		../AlfaOnline/resources/DWrong.png \
-		../AlfaOnline/resources/BackgroundTelaInicial.jpg \
-		../AlfaOnline/resources/bg.jpg \
-		../AlfaOnline/resources/Arrow.png \
+		../AlfaOnline/resources/PlayButton.png \
 		../AlfaOnline/resources/AirplaneToRoom.png \
-		../AlfaOnline/resources/COk.png \
-		../AlfaOnline/resources/AirplaneToRoomClicked.png \
-		../AlfaOnline/resources/Result4.jpg \
-		../AlfaOnline/resources/LetterD.jpg \
-		../AlfaOnline/resources/PlayButtonClicked.png \
-		../AlfaOnline/resources/DOk.png \
+		../AlfaOnline/resources/DWrong.png \
+		../AlfaOnline/resources/C.png \
+		../AlfaOnline/resources/BackgroundRoom.jpg \
+		../AlfaOnline/resources/StudyButtonClicked.png \
+		../AlfaOnline/resources/Personagem.png \
+		../AlfaOnline/resources/DiceToRoomClicked.png \
+		../AlfaOnline/resources/B.png \
+		../AlfaOnline/resources/AOk.png \
+		../AlfaOnline/resources/bg.jpg \
 		../AlfaOnline/resources/AWrong.png \
-		../AlfaOnline/resources/D.png \
+		../AlfaOnline/resources/BackgroundPlay.jpg \
+		../AlfaOnline/resources/A.png \
+		../AlfaOnline/resources/Result4.jpg \
+		../AlfaOnline/resources/DiceToRoom.png \
+		../AlfaOnline/resources/LetterD.jpg \
+		../AlfaOnline/resources/BallToRoom.png \
 		../AlfaOnline/resources/Result3.jpg \
 		../AlfaOnline/resources/LetterC.jpg \
-		../AlfaOnline/resources/PlayAgainButtonClicked.png \
-		../AlfaOnline/resources/BackgroundPlay.jpg \
-		../AlfaOnline/resources/QuitButtonClicked.png \
-		../AlfaOnline/resources/C.png \
+		../AlfaOnline/resources/ChairToRoomClicked.png \
+		../AlfaOnline/resources/CWrong.png \
+		../AlfaOnline/resources/ChairToRoom.png \
+		../AlfaOnline/resources/LogoTelaInicial.png \
+		../AlfaOnline/resources/DOk.png \
 		../AlfaOnline/resources/Result2.jpg \
 		../AlfaOnline/resources/LetterB.jpg \
-		../AlfaOnline/resources/StudyButton.png \
-		../AlfaOnline/resources/CWrong.png \
-		../AlfaOnline/resources/B.png \
-		../AlfaOnline/resources/BHeader.png
+		../AlfaOnline/resources/BHeader.png \
+		../AlfaOnline/resources/PlayAgainButtonClicked.png \
+		../AlfaOnline/resources/Result1.jpg \
+		../AlfaOnline/resources/LetterA.jpg
 	/Users/BetaKiller/Qt5.3.0/5.3/clang_64/bin/rcc -name qml ../AlfaOnline/qml.qrc -o qrc_qml.cpp
 
 compiler_moc_header_make_all:
