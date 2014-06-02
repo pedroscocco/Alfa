@@ -115,6 +115,7 @@ Window {
         id: atividade
         anchors.fill: parent
         visible: false
+        state: "PARADO"
         onVisibleChanged: visibilidadeAtividade()
     }
 
@@ -141,9 +142,11 @@ Window {
        if (atividade.visible) {
            menuInicial.visible = false;
            quarto.visible = false;
+           atividade.state = "INICIADO"
        }
        else {
            menuInicial.visible = true;
+           atividade.state = "PARADO"
        }
    }
 
