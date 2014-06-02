@@ -145,9 +145,10 @@ Item {
         }
 
         Image {
-            source: "resources/Arrow.png"
+            source: "resources/Quit.png"
             anchors.right: parent.right
-            y: 3*parent.height/4 - height/2
+            anchors.bottom: parent.bottom
+            anchors.margins: 10
             // Para voltar ao Menu Inicial
             MouseArea {
                 anchors.fill: parent
@@ -162,10 +163,17 @@ Item {
         Letra {
             visible: false
         }
+
+        Sugestao {
+            anchors.fill: parent
+            visible: false
+        }
+
         function mostrarPopup() {
             telaLetras.letrasVistas += 1
             if (telaLetras.letrasVistas > 0) {
-                // Mostrar popup
+                Sugestao.visible = true
+                Quarto.focus = false
                 console.log("LOG LOG LOG LET's KEEP LOGGING!")
                 //telaLetras.letrasVistas = 0
             }

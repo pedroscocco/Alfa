@@ -45,5 +45,14 @@
         <file>resources/LetterB.jpg</file>
         <file>resources/LetterC.jpg</file>
         <file>resources/LetterD.jpg</file>
+        <file>Sugestao.qml</file>
+        <file>resources/Quit.png</file>
+        <file>resources/Result0.jpg</file>
+        <file>resources/Result1.jpg</file>
+        <file>resources/Result2.jpg</file>
+        <file>resources/Result3.jpg</file>
+        <file>resources/Result4.jpg</file>
+        <file>resources/PlayAgainButton.png</file>
+        <file>resources/PlayAgainButtonClicked.png</file>
     </qresource>
 </RCC>
