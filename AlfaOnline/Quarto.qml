@@ -32,9 +32,9 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup()
+                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         quarto.focus = false
-                        parent.source = "resources/AirplaneToRoomClicked.png"
+                        airplane.source = "resources/AirplaneToRoomClicked.png"
                         letra.letra = "A"
                         letra.imagem = "resources/LetterA.jpg"
                         letra.visible = true
@@ -49,6 +49,7 @@ Item {
         }
 
         Image {
+            id: ball
             source: "resources/BallToRoom.png"
             anchors.bottom: parent.bottom
             anchors.right: parent.right
@@ -58,7 +59,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                      sugestao.visible=Logic.mostrarPopup()
+                     sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         quarto.focus = false
                         parent.source = "resources/BallToRoomClicked.png"
                         letra.letra = "B"
@@ -75,6 +76,7 @@ Item {
         }
 
         Image {
+            id: chair
             source: "resources/ChairToRoom.png"
             anchors.bottom: parent.bottom
             anchors.left: parent.left
@@ -84,7 +86,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup()
+                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         quarto.focus = false
                         parent.source = "resources/ChairToRoomClicked.png"
                         letra.letra = "C"
@@ -101,6 +103,7 @@ Item {
         }
 
         Image {
+            id: dice
             source: "resources/DiceToRoom.png"
             anchors.top: parent.top
             anchors.left: parent.left
@@ -110,7 +113,7 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup()
+                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         quarto.focus = false
                         parent.source = "resources/DiceToRoomClicked.png"
                         letra.letra = "D"

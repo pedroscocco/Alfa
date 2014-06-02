@@ -110,6 +110,13 @@ Window {
         onVisibleChanged: visibilidadeLetra() // Exemplo
     }
 
+    Sugestao {
+        id: sugestao
+        anchors.fill: parent
+        visible: false
+        onVisibleChanged: visibilidadeLetra() // Exemplo
+    }
+
     // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
    Atividade {
         id: atividade
