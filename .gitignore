@@ -3,11 +3,5 @@
 =======
 *.pro.user.*
 
-#Pastas de build
-/build-AlfaOnline-Desktop_Qt_5_2_1_GCC_32bit-Debug/
-/build-AlfaOnline-Desktop_Qt_5_2_1_GCC_32bit-Release/
-/build-AlfaOnline-Desktop_Qt_5_3_0_clang_64bit-Debug/
-/build-AlfaOnline-Desktop_Qt_5_3_0_MinGW_32bit-Debug/
-/build*/
 #Autosave
 *.autosave
