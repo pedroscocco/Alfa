@@ -48,7 +48,6 @@ Item {
 
         RowLayout {
         id: opcoes
-        row: 1
         Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
         anchors.bottom: parent.bottom
 
