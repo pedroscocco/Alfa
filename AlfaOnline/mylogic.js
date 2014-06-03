@@ -42,16 +42,17 @@ function getSource (source, resultNow){
     var s= source+"";
     s=s.replace("_", resultNow+"");
     s=s.replace("qrc:///", "");
-    if(resultNow==="Ok"){
+    if(resultNow=="Ok"){
         result++;
         change=true;
     }else{
         tries++;
-        if(tries===3){
+        if(tries==3){
             change=true;
         }
      }
 
+    console.log("tries: " + tries + " | result: " + result)
     return s;
 }
 
