@@ -116,7 +116,7 @@ Window {
         id: sugestao
         anchors.fill: parent
         visible: false
-        onVisibleChanged: visibilidadeLetra() // Exemplo
+        onVisibleChanged: visibilidadeSugestao() // Exemplo
     }
 
     // Exemplo pra chamar tela da letra é pra colocar em Quarto.qml depois
@@ -146,6 +146,16 @@ Window {
         }
         else {
             quarto.focus = true;
+            sugestao.visible = quarto.mostrarPopup()
+        }
+    }
+
+    function visibilidadeSugestao() {
+        if (sugestao.visible) {
+            quarto.focus = false;
+        }
+        else {
+            quarto.focus = true;
         }
     }
 
@@ -163,6 +173,7 @@ Window {
        if (atividade.visible) {
            menuInicial.visible = false;
            quarto.visible = false;
+           sugestao.visible = false;
            atividade.state = "INICIADO"
        }
        else {

@@ -7,6 +7,10 @@ Item {
     visible: true
     focus: true
 
+    function mostrarPopup() {
+        return Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
+    }
+
     Rectangle {
         id: telaLetras
         width: parent.width
@@ -14,7 +18,6 @@ Item {
 
         property int letraSelecionada: 0
         property int letrasVistas: 0
-
 
         Image {
             anchors.fill: parent
@@ -30,7 +33,6 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         airplane.source = "resources/AirplaneToRoomClicked.png"
                         letra.letra = "A"
                         letra.imagem = "resources/LetterA.jpg"
@@ -49,7 +51,6 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         parent.source = "resources/BallToRoomClicked.png"
                         letra.letra = "B"
                         letra.imagem = "resources/LetterB.jpg"
@@ -68,7 +69,6 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         parent.source = "resources/ChairToRoomClicked.png"
                         letra.letra = "C"
                         letra.imagem = "resources/LetterC.jpg"
@@ -87,7 +87,6 @@ Item {
                 anchors.fill: parent
                 onPressed: {
                     if(quarto.focus) {
-                        sugestao.visible=Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
                         parent.source = "resources/DiceToRoomClicked.png"
                         letra.letra = "D"
                         letra.imagem = "resources/LetterD.jpg"

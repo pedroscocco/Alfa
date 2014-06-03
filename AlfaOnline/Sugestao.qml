@@ -43,6 +43,7 @@ Item {
                         }
                         onReleased: {
                             parent.source = "resources/PlayButton.png"
+                            atividade.visible = true;
                         }
                     }
                 }
@@ -52,7 +53,7 @@ Item {
                     MouseArea {
                         anchors.fill: parent
                         onPressed: {
-                            sugestao.visible = false;
+                            sugestao.visible = false
                             quarto.focus = true
                         }
                     }
