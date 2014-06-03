@@ -6,7 +6,7 @@ var answer;
 var collision;
 var result;
 var tries;
-var numberOfErrors;
+var numberOfActivities;
 var change;
 var atividadeItem;
 function mostrarPopup(object1, object2, object3, object4) {
@@ -42,33 +42,35 @@ function getSource (source, resultNow){
     var s= source+"";
     s=s.replace("_", resultNow+"");
     s=s.replace("qrc:///", "");
-<<<<<<< HEAD
+
+
+
     if(resultNow==='Ok'){
         console.log("ok");
-=======
-    if(resultNow=="Ok"){
->>>>>>> branch 'master' of https://github.com/pedroscocco/Alfa.git
         result++;
-        change=1;
-        atividadeItem.change();
-         console.log("ok: "+ change+"  Tries: "+ tries);
-    }else if(change!==1){
+        tries=0;
+        if(numberOfActivities===3){
+            atividadeItem.toResult(result);
+        }else{
+            atividadeItem.change();
+        }
+         numberOfActivities++;
+
+    }else {
         tries++;
-<<<<<<< HEAD
         console.log("trie++: "+ tries);
         if(tries===3){
+            if(numberOfActivities===3){
+                atividadeItem.toResult(result);
+            }else{
+                atividadeItem.change();
+            }
+             numberOfActivities++;
 
-              console.log("trie=3: "+ change+"  Tries: "+ tries);
-            change=1;
             tries=0;
-=======
-        if(tries==3){
-            change=true;
->>>>>>> branch 'master' of https://github.com/pedroscocco/Alfa.git
-        }
-     }
 
-    console.log("tries: " + tries + " | result: " + result)
+     }
+    }
     return s;
 }
 
@@ -90,23 +92,11 @@ function start(){
     collision=false;
     result=0;
     tries=0;
-    numberOfErrors=0;
+    numberOfActivities=0;
     change=0;
 }
 
-function getChange(){
-    console.log("Change: "+ change+"  Tries: "+ tries);
-    return change;
-}
 
-function setChange(){
-
-    change=0;
-    tries=0;
-    numberOfErrors=0;
-
-     console.log("set change"+ tries);
-}
 
 function getResult(){
     return result;

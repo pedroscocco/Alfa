@@ -248,7 +248,7 @@ Item {
             id: backgroundAtividade
             anchors.fill: parent
             source: "resources/BackgroundPlay.jpg"
-			//source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
+
 
             GridLayout {
                 id: grade
@@ -263,10 +263,7 @@ Item {
                     Layout.alignment: (Qt.AlignTop | Qt.AlignHCenter)
 
                     Component.onCompleted: {
-                        //header.source = "resources/BHeader.png"
-                        //console.log("OLAAAA")
-                        atividade.escolherHeaderLetra()
-                        //console.log(source + " " + letrasUsadas)
+                       atividade.escolherHeaderLetra()
                     }
                 }
 
@@ -286,7 +283,7 @@ Item {
 
                     ]
                     onYChanged: {
-                        //console.log(personagem.y)
+
                         Logic.setAnswer(personagem.y)
                     }
                 }
@@ -312,14 +309,7 @@ Item {
             duration: 500
             easing.type: Easing.OutQuad
             onStopped: {
-                //Logic.setAnswer(personagem.y)
-                //console.log(personagem.y)
                 animatePersonagemToBottom.start()
-                //console.log(Logic.getChange())
-                if(Logic.getChange()==true){
-                    atividade.escolherHeaderLetra()
-                    Logic.setChange();
-                }
             }
         }
 
@@ -340,6 +330,10 @@ Item {
 
     function change(){
         escolherHeaderLetra()
+    }
+
+    function toResult(result){
+        console.log("Exibe resultado: "+ result)
     }
 
     Component.onCompleted: Logic.setAtividadeItem(atividade)
