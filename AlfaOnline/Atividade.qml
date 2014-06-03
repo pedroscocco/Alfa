@@ -25,8 +25,9 @@ Item {
 
     SoundEffect {
         id: jumpSound
-        //source: "resources/sounds/Jump1.wav"
-        source: "resources/sounds/Jump2.wav"
+        volume: 0.25
+        source: "resources/sounds/Jump1.wav"
+        //source: "resources/sounds/Jump2.wav"
     }
 
     ListView {
