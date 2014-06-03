@@ -1,3 +1,4 @@
+.pragma library // Shared game state
 var letrasVistas=0;
 var letterCenter;
 var correctLetter;
@@ -19,6 +20,7 @@ function mostrarPopup(object1, object2, object3, object4) {
 
 function setLetterCenter(source){
    letterCenter=source;
+
 }
 
 function setCorrectLetter(source){
@@ -36,7 +38,9 @@ function setCorrectLetter(source){
 
 function getSource(){
     if(correctLetter!==null && letterCenter!==null && answer!==null){
-        if(answer.indexOf(correctLetter)===0){
+        var a =answer+"";
+        console.log(a);
+        if(a.indexOf(correctLetter)===0){
             return answer.replace('_', 'Ok');
         }else{
             return answer.replace('_', 'Wrong');
@@ -45,7 +49,15 @@ function getSource(){
 }
 
 function setAnswer(){
-    answer=letterCenter;
+    answer=letterCenter+"";
+    console.log(letterCenter + "letterCenter");
+    console.log(answer+ " answer ");
+}
+
+function start(){
+    letterCenter=null;
+    correctLetter=null;
+    answer=null;
 }
 
 

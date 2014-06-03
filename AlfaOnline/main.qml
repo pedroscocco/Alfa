@@ -2,6 +2,7 @@ import QtQuick 2.1
 import QtQuick.Window 2.1
 import QtQuick.Layouts 1.1
 import "resources"
+import "mylogic.js" as Logic
 
 Window {
     id: window
@@ -67,6 +68,7 @@ Window {
                             jogar.source = "resources/PlayButtonClicked.png"
                         }
                         onReleased: {
+                            Logic.start()
                             atividade.visible = true
                             menuInicial.visible = false
                             jogar.source = "resources/PlayButton.png"

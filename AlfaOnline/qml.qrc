@@ -59,5 +59,6 @@
         <file>resources/PlayNextButton.png</file>
         <file>resources/PlayNextButtonClicked.png</file>
         <file>Resultado.qml</file>
+        <file>resources/AHeader.png</file>
     </qresource>
 </RCC>
