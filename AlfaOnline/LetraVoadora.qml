@@ -16,6 +16,7 @@ Image {
         if((x>574.0) && (x<721.0)) {
            if((Logic.getAnswer()===293) && (sourcePath.indexOf(Logic.getCorrectLetter())>0)){
                source= Logic.getSource(sourcePath, "Ok");
+                      console.log("source path"+source)
            }else  if(Logic.getAnswer()===293){
                source= Logic.getSource(sourcePath, "Wrong");
            }

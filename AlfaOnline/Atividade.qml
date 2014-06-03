@@ -12,7 +12,7 @@ Item {
 
     property int cont: 0
 
-    property int letrasUsadas: 1
+   property int letrasUsadas: 1
     property int letrasVoadorasUsadas: 1
 
     property int contLetra: 0
