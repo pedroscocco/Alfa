@@ -19,7 +19,12 @@ function mostrarPopup(object1, object2, object3, object4) {
 }
 
 function setLetterCenter(source){
+    if(source!==letterCenter){
+
+    }
+
    letterCenter=source;
+
 
 }
 

@@ -10,11 +10,13 @@ Image {
     source:""
 
     onXChanged: {
-
-        if((x>574) && (x<721)) {
+        if((x>574.0) && (x<721.0)) {
             Logic.setLetterCenter(source + "");
             source: Logic.getSource();
-            //console.log(source + " " + x);
+            console.log("Dentro: "+source + "    x: "+x);
+        }else{
+             console.log(source + "    x: "+x  );
+            Logic.setLetterCenter(null);
         }
     }
 
