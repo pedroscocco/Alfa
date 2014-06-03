@@ -333,8 +333,13 @@ Item {
         escolherHeaderLetra()
     }
 
-    function change(){
+    function next(){
+        backgroundAtividade.source = "resources/BackgroundPlay2.jpg"
         listaLetras.clear()
+        escolherHeaderLetra()
+    }
+
+    function change(){
         escolherHeaderLetra()
     }
 

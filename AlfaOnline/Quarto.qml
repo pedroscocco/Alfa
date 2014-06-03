@@ -11,6 +11,10 @@ Item {
         return Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
     }
 
+    function change() {
+        backgroundQuarto.source = "resources/BackgroundRoom2.jpg"
+    }
+
     Rectangle {
         id: telaLetras
         width: parent.width
@@ -20,6 +24,7 @@ Item {
         property int letrasVistas: 0
 
         Image {
+            id: backgroundQuarto
             anchors.fill: parent
             source: "resources/BackgroundRoom.jpg"
         }

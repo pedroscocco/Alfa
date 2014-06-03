@@ -62,5 +62,9 @@
         <file>resources/AHeader.png</file>
         <file>resources/BackgroundPopUp.jpg</file>
         <file>resources/LogoPopUp.png</file>
+        <file>resources/BackgroundPlay2.jpg</file>
+        <file>resources/BackgroundRoom2.jpg</file>
+        <file>resources/StudyNextButton.png</file>
+        <file>resources/StudyNextButtonClicked.png</file>
     </qresource>
 </RCC>
