@@ -347,9 +347,7 @@ Item {
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                if(quarto.focus) {
-                    quarto.visible = false;
-                }
+                atividade.visible = false;
             }
         }
     }
