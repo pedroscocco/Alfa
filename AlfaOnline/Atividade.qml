@@ -13,6 +13,10 @@ Item {
     property int cont: 0
 
     property int letrasUsadas: 1
+    property int letrasVoadorasUsadas: 1
+
+    property int contLetra: 0
+    property int contHeader: 0
 
     ListModel {
         id: listaLetras
@@ -41,18 +45,14 @@ Item {
     onStateChanged: {
         if (state == "INICIADO") {
             timer.running = true;
-            var componente = Qt.createComponent("LetraVoadora.qml")
-            componente.createObject(backgroundAtividade,{ "id": "letra" + atividade.cont, "x": -100, "y": 180})
-            listaLetras.append(componente)
+            escolherLetra()
         }
     }
 
     function tick() {
         if (atividade.state != "PARADO") {
-            var componente = Qt.createComponent("LetraVoadora.qml")
-            componente.createObject(backgroundAtividade,{ "x": -100, "y": 180})
-             listaLetras.append(componente)
-
+            escolherLetra()
+            
 
             //Precisa conseguir pegar as instancias dos objetos em especial o x e y
             console.log(listaLetras.get(1).source)
@@ -73,41 +73,131 @@ Item {
     function colisao (index) {
         console.log(index)
         console.log(listaLetras.get(index).x);
-        if(listaLetras.get(index).x >= personagem.x-200 && listaLetras.get(index).x <= personagem.x+200 && listaLetras.get(index).y <= personagem.y + 2000) {
+        if(listaLetras.get(index).x >= personagem.x-200 && listaLetras.get(index).x <= personagem.x+200 && listaLet        var componente = Qt.createComponent("LetraVoadora.qml")
+ras.get(index).y <= personagem.y + 2000) {
             console.log("HIT");
         }
     }
 
     function escolherLetra() {
         var alfa = letraAleatoria()
+        var componente = Qt.createComponent("LetraVoadora.qml")
         console.log("ALFA: " + alfa)
+        if (letrasVoadorasUsadas != 1) {
+            if (letrasVoadorasUsadas % alfa != 0) {
+                switch(alfa) {
+                case 3: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 5: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 7: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 11: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                }
+            }
+            else {
+                if (contLetra == 4) {
+                    letrasVoadorasUsadas = 1;
+                    contLetra = 0;
+                }
+
+                escolherLetra()
+            }
+        }
+        else {
+            switch(alfa) {
+            case 3: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadroasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            case 5: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            case 7: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            case 11: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            }
+        }
+    }
+
+    function escolherHeaderLetra() {
+        var alfa = letraAleatoria()
+        //console.log("ALFA: " + alfa)
         if (letrasUsadas != 1) {
             if (letrasUsadas % alfa != 0) {
                 switch(alfa) {
                 case 3: {
                     header.source = "resources/AHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    contHeader++
                 }
                 break;
                 case 5: {
                     header.source = "resources/BHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    contHeader++
                 }
                 break;
                 case 7: {
                     header.source = "resources/CHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    contHeader++
                 }
                 break;
                 case 11: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    contHeader++
                 }
                 break;
                 }
             }
             else {
-                escolherLetra()
+                if (contHeader == 4) {
+                    letrasUsadas = 1
+                    contHeader = 0
+                }
+
+                escolherHeaderLetra()
             }
         }
         else {
@@ -115,21 +205,25 @@ Item {
             case 3: {
                 header.source = "resources/AHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                contHeader++
             }
             break;
             case 5: {
                 header.source = "resources/BHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                contHeader++
             }
             break;
             case 7: {
-                header.source = "resources/CHeader.png"
+                 header.source = "resources/CHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                contHeader++
             }
             break;
             case 11: {
                 header.source = "resources/DHeader.png"
-                letrasUsadas = letrasUsadas * alfa
+               letrasUsadas = letrasUsadas * alfa
+                contHeader++
             }
             break;
             }
@@ -138,8 +232,7 @@ Item {
     }
 
     function letraAleatoria() {
-        var ret
-        switch(Math.floor(Math.random()*4)) {
+        var ret        switch(Math.floor(Math.random()*4)) {
         case 0: {
             ret = 3
         }
@@ -148,7 +241,7 @@ Item {
             ret = 5
         }
         break;
-        case 2: {
+        case 2:{
             ret = 7
         }
         break;
@@ -189,9 +282,9 @@ Item {
 
                     Component.onCompleted: {
                         //header.source = "resources/BHeader.png"
-                        console.log("OLAAAA")
-                        atividade.escolherLetra()
-                        console.log(source + " " + letrasUsadas)
+                        //console.log("OLAAAA")
+                        atividade.escolherHeaderLetra()
+                        //console.log(source + " " + letrasUsadas)
                     }
                 }
 
@@ -199,7 +292,7 @@ Item {
                     id: personagem
                     y: 0
                     Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
-                    source:"resources/Personagem.png"
+                             source:"resources/Personagem.png"
                     state: "NOCHAO"
                     states: [
                         State {
@@ -233,9 +326,12 @@ Item {
             duration: 500
             easing.type: Easing.OutQuad
             onStopped: {
-                Logic.setAnswer(personagem.y);
-                console.log("bla")
+                Logic.setAnswer(personagem.y)
                 animatePersonagemToBottom.start()
+                if(Logic.getChange()===true){
+                        atividade.escolherLetra()
+                        Logic.setChange();
+                }
             }
         }
 

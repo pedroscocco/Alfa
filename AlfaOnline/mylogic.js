@@ -5,6 +5,9 @@ var correctLetter;
 var answer;
 var collision;
 var result;
+var tries;
+var numberOfErrors;
+var change;
 
 function mostrarPopup(object1, object2, object3, object4) {
     var source1=object1;
@@ -35,11 +38,20 @@ function setCorrectLetter(source){
 
 }
 
-function getSource (source, result){
+function getSource (source, resultNow){
     var s= source+"";
-    s=s.replace("_", result+"");
+    s=s.replace("_", resultNow+"");
     s=s.replace("qrc:///", "");
-    console.log("source path in js"+s)
+    if(resultNow==="Ok"){
+        result++;
+        change=true;
+    }else{
+        tries++;
+        if(tries===3){
+            change=true;
+        }
+     }
+
     return s;
 }
 
@@ -60,7 +72,26 @@ function start(){
     answer=null;
     collision=false;
     result=0;
+    tries=0;
+    numberOfErrors=0;
+    change=false;
 }
+
+function getChange(){
+    return change;
+}
+
+function setChange(){
+    change=false;
+    tries=0;
+    numberOfErrors=0;
+}
+
+
+function getResult(){
+    return result;
+}
+
 
 
 

@@ -9,13 +9,13 @@ Image {
     y: 0
     source:""
 
+    property int alfa: 3
+
     onXChanged: {
         var sourcePath= source+"";
         if((x>574.0) && (x<721.0)) {
-
            if((Logic.getAnswer()===293) && (sourcePath.indexOf(Logic.getCorrectLetter())>0)){
                source= Logic.getSource(sourcePath, "Ok");
-               console.log("source path"+source)
            }else  if(Logic.getAnswer()===293){
                source= Logic.getSource(sourcePath, "Wrong");
            }
@@ -34,20 +34,20 @@ Image {
 
 
     Component.onCompleted: {
-        switch(Math.floor(Math.random()*4)) {
-        case 0: {
+        switch(alfa) {
+        case 3: {
             letraVoadora.source = "resources/A_.png"
         }
         break;
-        case 1: {
+        case 5: {
             letraVoadora.source = "resources/B_.png"
         }
         break;
-        case 2: {
+        case 7: {
             letraVoadora.source = "resources/C_.png"
         }
         break;
-        case 3: {
+        case 11: {
             letraVoadora.source = "resources/D_.png"
         }
         break;
