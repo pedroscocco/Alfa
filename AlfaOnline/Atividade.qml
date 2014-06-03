@@ -12,11 +12,10 @@ Item {
 
     property int cont: 0
 
-<<<<<<< HEAD
    property int letrasUsadas: 1
-=======
+
     property int letrasUsadas: 1
->>>>>>> branch 'master' of https://github.com/pedroscocco/Alfa.git
+
     property int letrasVoadorasUsadas: 1
 
     property int contLetra: 0
@@ -56,11 +55,6 @@ Item {
     function tick() {
         if (atividade.state != "PARADO") {
             escolherLetra()
-<<<<<<< HEAD
-            
-=======
->>>>>>> branch 'master' of https://github.com/pedroscocco/Alfa.git
-
             //Precisa conseguir pegar as instancias dos objetos em especial o x e y
             console.log(listaLetras.get(1).source)
             //console.log(verListaLetras.indexAt(-100, 180))
@@ -243,7 +237,7 @@ ras.get(index).y <= personagem.y + 2000) {
     }
 
     function letraAleatoria() {
-        var ret        switch(Math.floor(Math.random()*4)) {
+        var ret        switch(Math.floor(Math.random()*4)) {
         case 0: {
             ret = 3
         }
