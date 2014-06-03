@@ -328,7 +328,13 @@ Item {
         }
     }
 
+    function retry() {
+        listaLetras.clear()
+        escolherHeaderLetra()
+    }
+
     function change(){
+        listaLetras.clear()
         escolherHeaderLetra()
     }
 
