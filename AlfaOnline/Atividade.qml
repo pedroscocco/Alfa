@@ -274,7 +274,7 @@ Item {
                     id: personagem
                     y: 0
                     Layout.alignment: (Qt.AlignBottom | Qt.AlignHCenter)
-                             source:"resources/Personagem.png"
+                    source:"resources/Personagem.png"
                     state: "NOCHAO"
                     states: [
                         State {
