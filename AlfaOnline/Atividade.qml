@@ -51,26 +51,15 @@ Item {
         if (atividade.state != "PARADO") {
             escolherLetra()
             //Precisa conseguir pegar as instancias dos objetos em especial o x e y
-            console.log(listaLetras.get(1).source)
             //console.log(verListaLetras.indexAt(-100, 180))
-            console.log(listaLetras.count)
-
-            if (listaLetras.count > 0) {
-                for (var i = 0; i < listaLetras; i++) {
-
-                    console.log(i)
-                }
-            }
+            //console.log(listaLetras.count)
 
         }
-    }
-
-
-
+    }          
     function escolherLetra() {
         var alfa = letraAleatoria()
         var componente = Qt.createComponent("LetraVoadora.qml")
-        console.log("ALFA: " + alfa)
+        //console.log("ALFA: " + alfa)
         if (letrasVoadorasUsadas != 1) {
             if (letrasVoadorasUsadas % alfa != 0) {
                 switch(alfa) {
@@ -118,7 +107,7 @@ Item {
             case 3: {
                 componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
                 listaLetras.append(componente)
-                letrasVoadroasUsadas = letrasVoadorasUsadas * alfa
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
                 contLetra++
             }
             break;
@@ -296,6 +285,10 @@ Item {
                         }
 
                     ]
+                    onYChanged: {
+                        //console.log(personagem.y)
+                        Logic.setAnswer(personagem.y)
+                    }
                 }
             }
         }
@@ -315,15 +308,17 @@ Item {
             target: personagem
             property: "y"
             from:personagem.y
-            to: personagem.y - 150
+            to: personagem.y - 226
             duration: 500
             easing.type: Easing.OutQuad
             onStopped: {
-                Logic.setAnswer(personagem.y)
+                //Logic.setAnswer(personagem.y)
+                //console.log(personagem.y)
                 animatePersonagemToBottom.start()
-                if(Logic.getChange()===true){
-                        atividade.escolherLetra()
-                        Logic.setChange();
+                //console.log(Logic.getChange())
+                if(Logic.getChange()==true){
+                    atividade.escolherHeaderLetra()
+                    Logic.setChange();
                 }
             }
         }
@@ -333,15 +328,21 @@ Item {
             target: personagem
             property: "y"
             from: personagem.y
-            to: personagem.y + 150
+            to: personagem.y + 226
             duration: 500
             easing.type: Easing.InQuad
             onStopped: {
-                Logic.setAnswer(personagem.y);
+                //Logic.setAnswer(personagem.y);
                 personagem.state = "NOCHAO"
             }
         }
     }
+
+    function change(){
+        escolherHeaderLetra()
+    }
+
+    Component.onCompleted: Logic.setAtividadeItem(atividade)
 }
 
 
