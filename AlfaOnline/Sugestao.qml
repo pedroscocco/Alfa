@@ -14,7 +14,7 @@ Item {
             id: popup
             anchors.fill: parent
             anchors.centerIn: parent
-            anchors.margins: 100
+            anchors.margins: 0
 
            Image {
                 anchors.fill: parent
@@ -23,21 +23,17 @@ Item {
                 width: popup.width
            }
 
-            ColumnLayout {
+          Image {
+                anchors.top:  popup.top
+                anchors.horizontalCenter: popup.horizontalCenter
+                source: "resources/LogoPopUp.png"
+                smooth: true
+          }
 
 
-              Image {
-                    height: popup.height/3
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    source: "resources/LogoPopUp.png"
-              }
-
-
-                RowLayout {
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+          RowLayout {
+                    anchors.bottom: popup.bottom
                     Image {
-                        height: (popup.height/3)*2
-                        Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
                         source: "resources/PlayButton.png"
                         MouseArea {
                             anchors.fill: parent
@@ -52,8 +48,21 @@ Item {
                         }
                     }
                     Image {
-                        height: 400
-                        Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+
+                        source: "resources/StudyNextButton.png"
+                        MouseArea {
+                            anchors.fill: parent
+                            onPressed: {
+                                parent.source = "resources/StudyNextButtonClicked.png"
+                            }
+                            onReleased: {
+                                parent.source = "resources/StudyNextButton.png"
+                                quarto.change()
+                                sugestao.visible = false;
+                            }
+                        }
+                    }
+                    Image {
                         source: "resources/QuitButton.png"
                         MouseArea {
                             anchors.fill: parent
@@ -66,7 +75,7 @@ Item {
                         }
                     }
                 }
-            }
+
         }
     }
 

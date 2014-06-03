@@ -12,11 +12,9 @@ Item {
         return Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
     }
 
-    /*SoundEffect {
-        id: buttonClickQuarto
-        source: "resources/sounds/ButtonSelect1.wav"
-        //source: "resources/sounds/ButtonSelect1.wav"
-    }*/
+    function change() {
+        backgroundQuarto.source = "resources/BackgroundRoom2.jpg"
+    }
 
     Rectangle {
         id: telaLetras
@@ -27,6 +25,7 @@ Item {
         property int letrasVistas: 0
 
         Image {
+            id: backgroundQuarto
             anchors.fill: parent
             source: "resources/BackgroundRoom.jpg"
         }

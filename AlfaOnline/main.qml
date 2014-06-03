@@ -185,6 +185,7 @@ Window {
            quarto.visible = false;
            sugestao.visible = false;
            atividade.state = "INICIADO"
+           atividade.retry()
        }
        else {
            menuInicial.visible = true;

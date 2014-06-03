@@ -89,7 +89,7 @@ Item {
                             atividade.retry()
                         }
                         else if(telaResultado.state === 'HIGH') {
-                            atividade.change()
+                            atividade.next()
                         }
                         atividade.visible = true
                     }
