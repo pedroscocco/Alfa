@@ -7,28 +7,33 @@ Item {
 
     property string letra: "A"  // Qual e a letra
     property string imagem: "resources/LetterA.jpg" // Caminho para a imagem
-
     Rectangle {
-        anchors.fill: parent
-        anchors.margins: 100
-        color: Qt.rgba(0,0,0,0.5)
+      id: overflow
+      anchors.fill: parent
+      anchors.centerIn: parent
+      color: Qt.rgba(0,0,0,0.7)
 
-        // Fazer funcionar com imagens do aplicativo
-        Image {
+        Rectangle {
             anchors.fill: parent
-            source: letra.imagem
-        }
-        Image {
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-            anchors.bottomMargin: 10
-            anchors.rightMargin: 10
-            source: "resources/Arrow.png"
-            MouseArea {
+            anchors.margins: 100
+            color: Qt.rgba(0,0,0,0.5)
+
+            // Fazer funcionar com imagens do aplicativo
+            Image {
                 anchors.fill: parent
-                onPressed: letra.visible = false
+                source: letra.imagem
+            }
+            Image {
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+                anchors.bottomMargin: 10
+                anchors.rightMargin: 10
+                source: "resources/Arrow.png"
+                MouseArea {
+                    anchors.fill: parent
+                    onPressed: letra.visible = false
+                }
             }
         }
     }
-
 }

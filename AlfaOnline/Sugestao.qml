@@ -4,57 +4,63 @@ import "resources"
 
 Item {
     id: sugestao
-
     Rectangle {
-        id: popup
-        anchors.fill: parent
-        anchors.centerIn: parent
-        anchors.margins: 100
-        color: Qt.rgba(1,1,1,0.9)
+      id: popup1
+      anchors.fill: parent
+      anchors.centerIn: parent
+      color: Qt.rgba(0,0,0,0.7)
 
-        // Fazer funcionar com imagens do aplicativo
-//        Image {
-//            anchors.fill: parent
-//            source: "resources/BackgroundTelaInicial.jpg"
-//        }
-
-        ColumnLayout {
+        Rectangle {
+            id: popup
             anchors.fill: parent
+            anchors.centerIn: parent
+            anchors.margins: 100
 
-            Rectangle {
-                height: popup.height/2
+           Image {
+                anchors.fill: parent
+                source: "resources/BackgroundPopUp.jpg"
+                height: popup.height
                 width: popup.width
-                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                Image {
-                    anchors.fill: parent
-                    source: "resources/LogoTelaInicial.png"
-                }
-            }
+           }
 
-            RowLayout {
-                Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                Image {
+            ColumnLayout {
+
+
+              Image {
+                    height: popup.height/3
                     Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    source: "resources/PlayButton.png"
-                    MouseArea {
-                        anchors.fill: parent
-                        onPressed: {
-                            parent.source = "resources/PlayButtonClicked.png"
-                        }
-                        onReleased: {
-                            parent.source = "resources/PlayButton.png"
-                            atividade.visible = true;
+                    source: "resources/LogoPopUp.png"
+              }
+
+
+                RowLayout {
+                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                    Image {
+                        height: (popup.height/3)*2
+                        Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                        source: "resources/PlayButton.png"
+                        MouseArea {
+                            anchors.fill: parent
+                            onPressed: {
+                                parent.source = "resources/PlayButtonClicked.png"
+                            }
+                            onReleased: {
+                                parent.source = "resources/PlayButton.png"
+                                atividade.visible = true;
+                            }
                         }
                     }
-                }
-                Image {
-                    Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
-                    source: "resources/Quit.png"
-                    MouseArea {
-                        anchors.fill: parent
-                        onPressed: {
-                            sugestao.visible = false
-                            quarto.focus = true
+                    Image {
+                        height: 400
+                        Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+                        source: "resources/QuitButton.png"
+                        MouseArea {
+                            anchors.fill: parent
+                            onPressed: {
+                                parent.source = "resources/QuitButtonClicked.png"
+                                sugestao.visible = false
+                                quarto.focus = true
+                            }
                         }
                     }
                 }

@@ -60,5 +60,7 @@
         <file>resources/PlayNextButtonClicked.png</file>
         <file>Resultado.qml</file>
         <file>resources/AHeader.png</file>
+        <file>resources/BackgroundPopUp.jpg</file>
+        <file>resources/LogoPopUp.png</file>
     </qresource>
 </RCC>

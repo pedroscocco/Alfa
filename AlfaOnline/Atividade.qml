@@ -337,6 +337,22 @@ Item {
     }
 
     Component.onCompleted: Logic.setAtividadeItem(atividade)
+
+    Image {
+        source: "resources/Quit.png"
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.margins: 10
+        // Para voltar ao Menu Inicial
+        MouseArea {
+            anchors.fill: parent
+            onPressed: {
+                if(quarto.focus) {
+                    quarto.visible = false;
+                }
+            }
+        }
+    }
 }
 
 
