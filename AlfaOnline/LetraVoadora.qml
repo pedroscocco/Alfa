@@ -20,8 +20,6 @@ Image {
            }else  if(Logic.getAnswer()===293){
                source= Logic.getSource(sourcePath, "Wrong");
            }
-
-
         }
     }
 
