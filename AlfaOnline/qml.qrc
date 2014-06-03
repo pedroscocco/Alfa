@@ -14,14 +14,14 @@
         <file>resources/QuitButtonClicked.png</file>
         <file>resources/StudyButton.png</file>
         <file>resources/StudyButtonClicked.png</file>
-        <file>resources/A.png</file>
+        <file>resources/A_.png</file>
         <file>resources/Arrow.png</file>
         <file>resources/BackgroundTelaInicial.jpg</file>
         <file>resources/AirplaneToRoom.png</file>
         <file>resources/AirplaneToRoomClicked.png</file>
         <file>resources/AOk.png</file>
         <file>resources/AWrong.png</file>
-        <file>resources/B.png</file>
+        <file>resources/B_.png</file>
         <file>resources/BackgroundPlay.jpg</file>
         <file>resources/BackgroundRoom.jpg</file>
         <file>resources/BallToRoom.png</file>
@@ -29,13 +29,13 @@
         <file>resources/BHeader.png</file>
         <file>resources/BOk.png</file>
         <file>resources/BWrong.png</file>
-        <file>resources/C.png</file>
+        <file>resources/C_.png</file>
         <file>resources/ChairToRoom.png</file>
         <file>resources/ChairToRoomClicked.png</file>
         <file>resources/CHeader.png</file>
         <file>resources/COk.png</file>
         <file>resources/CWrong.png</file>
-        <file>resources/D.png</file>
+        <file>resources/D_.png</file>
         <file>resources/DHeader.png</file>
         <file>resources/DiceToRoom.png</file>
         <file>resources/DiceToRoomClicked.png</file>
@@ -58,5 +58,6 @@
         <file>mylogic.js</file>
         <file>resources/PlayNextButton.png</file>
         <file>resources/PlayNextButtonClicked.png</file>
+        <file>Resultado.qml</file>
     </qresource>
 </RCC>

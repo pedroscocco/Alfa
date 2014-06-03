@@ -15,19 +15,19 @@ Image {
     Component.onCompleted: {
         switch(Math.floor(Math.random()*4)) {
         case 0: {
-            letraVoadora.source = "resources/A.png"
+            letraVoadora.source = "resources/A_.png"
         }
         break;
         case 1: {
-            letraVoadora.source = "resources/B.png"
+            letraVoadora.source = "resources/B_.png"
         }
         break;
         case 2: {
-            letraVoadora.source = "resources/C.png"
+            letraVoadora.source = "resources/C_.png"
         }
         break;
         case 3: {
-            letraVoadora.source = "resources/D.png"
+            letraVoadora.source = "resources/D_.png"
         }
         break;
         }
