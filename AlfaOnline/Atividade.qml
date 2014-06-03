@@ -30,6 +30,18 @@ Item {
         }
     }
 
+    ListView {
+        id: verListaLetras
+        model: listaLetras
+        delegate: Item {
+            Image {
+                id: letraVoadora
+                x: x
+                y: y
+            }
+        }
+    }
+
     Timer {
         id: timer
         interval: 5000
@@ -55,7 +67,11 @@ Item {
 
 
             //Precisa conseguir pegar as instancias dos objetos em especial o x e y
+<<<<<<< HEAD
             console.log(listaLetras.get(1).source)
+=======
+            console.log(listaLetras.get(1).x)
+>>>>>>> branch 'master' of https://github.com/pedroscocco/Alfa.git
             //console.log(verListaLetras.indexAt(-100, 180))
             console.log(listaLetras.count)
 

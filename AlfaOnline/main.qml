@@ -126,16 +126,28 @@ Window {
         onVisibleChanged: visibilidadeAtividade()
     }
 
-   // Funcoes de controle de visibilidade
-   function visibilidadeMenuInicial() {
+   Resultado {
+       id: resultado
+       anchors.fill: parent
+       visible: false
+       onVisibleChanged: visibilidadeResultado() // Exemplo
+    }
 
-   }
+    // Funcoes de controle de visibilidade
+    function visibilidadeMenuInicial() {
 
-   function visibilidadeLetra() {
+    }
 
-   }
+    function visibilidadeLetra() {
+        if (letra.visible) {
+            quarto.focus = false;
+        }
+        else {
+            quarto.focus = true;
+        }
+    }
 
-   function visibilidadeQuarto() {
+    function visibilidadeQuarto() {
        if (quarto.visible) {
            menuInicial.visible = false;
            atividade.visible = false;
@@ -143,9 +155,9 @@ Window {
        else {
            menuInicial.visible = true;
        }
-   }
+    }
 
-   function visibilidadeAtividade() {
+    function visibilidadeAtividade() {
        if (atividade.visible) {
            menuInicial.visible = false;
            quarto.visible = false;
@@ -155,6 +167,10 @@ Window {
            menuInicial.visible = true;
            atividade.state = "PARADO"
        }
-   }
+    }
 
-}
+    function visibilidadeResultado() {
+
+    }
+
+    }
