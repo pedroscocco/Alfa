@@ -11,13 +11,8 @@ Item {
                                 // Provavel que não vá usar
 
     property int cont: 0
-
-   property int letrasUsadas: 1
-
     property int letrasUsadas: 1
-
     property int letrasVoadorasUsadas: 1
-
     property int contLetra: 0
     property int contHeader: 0
 
@@ -62,7 +57,7 @@ Item {
 
             if (listaLetras.count > 0) {
                 for (var i = 0; i < listaLetras; i++) {
-                    colisao(i)
+
                     console.log(i)
                 }
             }
@@ -70,15 +65,7 @@ Item {
         }
     }
 
-    // Precisa rever a regra da colisao dentro do if
-    function colisao (index) {
-        console.log(index)
-        console.log(listaLetras.get(index).x);
-        if(listaLetras.get(index).x >= personagem.x-200 && listaLetras.get(index).x <= personagem.x+200 && listaLet        var componente = Qt.createComponent("LetraVoadora.qml")
-ras.get(index).y <= personagem.y + 2000) {
-            console.log("HIT");
-        }
-    }
+
 
     function escolherLetra() {
         var alfa = letraAleatoria()
@@ -223,11 +210,11 @@ ras.get(index).y <= personagem.y + 2000) {
             break;
             case 11: {
                 header.source = "resources/DHeader.png"
-<<<<<<< HEAD
+
                letrasUsadas = letrasUsadas * alfa
-=======
+
                 letrasUsadas = letrasUsadas * alfa
->>>>>>> branch 'master' of https://github.com/pedroscocco/Alfa.git
+
                 contHeader++
             }
             break;
@@ -237,7 +224,8 @@ ras.get(index).y <= personagem.y + 2000) {
     }
 
     function letraAleatoria() {
-        var ret        switch(Math.floor(Math.random()*4)) {
+        var ret
+        switch(Math.floor(Math.random()*4)) {
         case 0: {
             ret = 3
         }
