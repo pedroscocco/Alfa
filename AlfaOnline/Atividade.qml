@@ -134,6 +134,7 @@ Item {
             break;
             }
         }
+        Logic.setCorrectLetter(header.source+"")
     }
 
     function letraAleatoria() {
@@ -232,7 +233,7 @@ Item {
             duration: 500
             easing.type: Easing.OutQuad
             onStopped: {
-                Logic.setAnswer();
+                Logic.setAnswer(personagem.y);
                 console.log("bla")
                 animatePersonagemToBottom.start()
             }
@@ -247,6 +248,7 @@ Item {
             duration: 500
             easing.type: Easing.InQuad
             onStopped: {
+                Logic.setAnswer(personagem.y);
                 personagem.state = "NOCHAO"
             }
         }
