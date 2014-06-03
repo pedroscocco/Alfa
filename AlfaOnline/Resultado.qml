@@ -35,7 +35,7 @@ Item {
                 PropertyChanges {
                     target: jogar
                     src: "resources/PlayNextButton.png"
-                    srclkd: "resources/PlayNextButtonClicked"
+                    srclkd: "resources/PlayNextButtonClicked.png"
                 }
             }
 
@@ -48,7 +48,9 @@ Item {
 
         RowLayout {
         id: opcoes
+        row: 1
         Layout.alignment: (Qt.AlignHCenter | Qt.AlignVCenter)
+        anchors.bottom: parent.bottom
 
             Image {
                 id: estudar

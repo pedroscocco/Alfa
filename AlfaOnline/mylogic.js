@@ -46,7 +46,7 @@ function getSource (source, resultNow){
 
 
     if(resultNow==='Ok'){
-        console.log("ok");
+        console.log("ok "+numberOfActivities);
         result++;
         tries=0;
         if(numberOfActivities===3){

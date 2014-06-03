@@ -333,6 +333,9 @@ Item {
     }
 
     function toResult(result){
+        resultado.prepare(result)
+        resultado.visible = true
+        atividade.visible = false
         console.log("Exibe resultado: "+ result)
     }
 
