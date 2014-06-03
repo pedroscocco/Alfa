@@ -27,7 +27,7 @@ Item {
                 PropertyChanges {
                     target: jogar
                     src: "resources/PlayAgainButton.png"
-                    srclkd: "resources/PlayAgainButtonClicked"
+                    srclkd: "resources/PlayAgainButtonClicked.png"
                 }
             },
             State {

@@ -9,6 +9,7 @@ var tries;
 var numberOfActivities;
 var change;
 var atividadeItem;
+var clearLetters;
 function mostrarPopup(object1, object2, object3, object4) {
     var source1=object1;
     var source2=object2;
@@ -94,6 +95,7 @@ function start(){
     tries=0;
     numberOfActivities=0;
     change=0;
+    clearLetters = false
 }
 
 
@@ -108,5 +110,10 @@ function setAtividadeItem(tempAtividadeItem) {
     atividadeItem = tempAtividadeItem;
 }
 
+function getClearLetters() {
+    return clearLetters;
+}
 
-
+function setClearLetters(clear) {
+    clearLetters = clear;
+}
