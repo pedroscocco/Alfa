@@ -3,6 +3,8 @@ var letrasVistas=0;
 var letterCenter;
 var correctLetter;
 var answer;
+var collision;
+var result;
 
 function mostrarPopup(object1, object2, object3, object4) {
     var source1=object1;
@@ -15,20 +17,10 @@ function mostrarPopup(object1, object2, object3, object4) {
     }else{
         return false;
     }
-
-}
-
-function setLetterCenter(source){
-    if(source!==letterCenter){
-
-    }
-
-   letterCenter=source;
-
-
 }
 
 function setCorrectLetter(source){
+    var source1=source+"";
     if(source1.indexOf("AHeader")>0){
         correctLetter='A_.png';
     }else  if(source1.indexOf("BHeader")>0){
@@ -38,31 +30,36 @@ function setCorrectLetter(source){
     }else  if(source1.indexOf("DHeader")>0){
         correctLetter='D_.png';
     }
+
+    console.log("Letter: correct111: "+ correctLetter)
+
 }
 
-
-function getSource(){
-    if(correctLetter!==null && letterCenter!==null && answer!==null){
-        var a =answer+"";
-        console.log(a);
-        if(a.indexOf(correctLetter)===0){
-            return answer.replace('_', 'Ok');
-        }else{
-            return answer.replace('_', 'Wrong');
-        }
-    } else return letterCenter;
+function getSource (source, result){
+    var s= source+"";
+    s=s.replace("_", result+"");
+    s=s.replace("qrc:///", "");
+    console.log("source path in js"+s)
+    return s;
 }
 
-function setAnswer(){
-    answer=letterCenter+"";
-    console.log(letterCenter + "letterCenter");
-    console.log(answer+ " answer ");
+function getCorrectLetter(){
+      return correctLetter;
+}
+
+function setAnswer(positionY){
+    answer=positionY;
+}
+
+function getAnswer(){
+   return answer;
 }
 
 function start(){
     letterCenter=null;
-    correctLetter=null;
     answer=null;
+    collision=false;
+    result=0;
 }
 
 

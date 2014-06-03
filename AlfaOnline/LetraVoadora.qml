@@ -12,13 +12,14 @@ Image {
     property int alfa: 3
 
     onXChanged: {
+        var sourcePath= source+"";
         if((x>574.0) && (x<721.0)) {
-            Logic.setLetterCenter(source + "");
-            source: Logic.getSource();
-            //console.log("Dentro: "+source + "    x: "+x);
-        }else{
-            // console.log(source + "    x: "+x  );
-            Logic.setLetterCenter(null);
+           if((Logic.getAnswer()===293) && (sourcePath.indexOf(Logic.getCorrectLetter())>0)){
+               source= Logic.getSource(sourcePath, "Ok");
+               console.log("source path"+source)
+           }else  if(Logic.getAnswer()===293){
+               source= Logic.getSource(sourcePath, "Wrong");
+           }
         }
     }
 
@@ -51,4 +52,6 @@ Image {
         break;
         }
     }
+
+
 }
