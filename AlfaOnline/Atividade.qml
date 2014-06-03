@@ -12,8 +12,22 @@ Item {
 
     property int cont: 0
 
+    property int letrasUsadas: 1
+
     ListModel {
         id: listaLetras
+    }
+
+    ListView {
+        id: verListaLetras
+        model: listaLetras
+        delegate: Item {
+            Image {
+                id: letraVoadora
+                x: x
+                y: y
+            }
+        }
     }
 
 
@@ -42,6 +56,7 @@ Item {
 
             //Precisa conseguir pegar as instancias dos objetos em especial o x e y
             console.log(listaLetras.get(1).x)
+            //console.log(verListaLetras.indexAt(-100, 180))
             console.log(listaLetras.count)
 
             if (listaLetras.count > 0) {
@@ -63,6 +78,89 @@ Item {
         }
     }
 
+    function escolherLetra() {
+        var alfa = letraAleatoria()
+        console.log("ALFA: " + alfa)
+        if (letrasUsadas != 1) {
+            if (letrasUsadas % alfa != 0) {
+                switch(alfa) {
+                case 3: {
+                    header.source = "resources/AHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                }
+                break;
+                case 5: {
+                    header.source = "resources/BHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                }
+                break;
+                case 7: {
+                    header.source = "resources/CHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                }
+                break;
+                case 11: {
+                    header.source = "resources/DHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                }
+                break;
+                }
+            }
+            else {
+                escolherLetra()
+            }
+        }
+        else {
+            switch(alfa) {
+            case 3: {
+                header.source = "resources/AHeader.png"
+                letrasUsadas = letrasUsadas * alfa
+            }
+            break;
+            case 5: {
+                header.source = "resources/BHeader.png"
+                letrasUsadas = letrasUsadas * alfa
+            }
+            break;
+            case 7: {
+                header.source = "resources/CHeader.png"
+                letrasUsadas = letrasUsadas * alfa
+            }
+            break;
+            case 11: {
+                header.source = "resources/DHeader.png"
+                letrasUsadas = letrasUsadas * alfa
+            }
+            break;
+            }
+        }
+    }
+
+    function letraAleatoria() {
+        var ret
+        switch(Math.floor(Math.random()*4)) {
+        case 0: {
+            ret = 3
+        }
+        break;
+        case 1: {
+            ret = 5
+        }
+        break;
+        case 2: {
+            ret = 7
+        }
+        break;
+        case 3: {
+            ret = 11
+        }
+        break;
+        }
+
+        return ret
+    }
+
+
     Rectangle {
         anchors.fill: parent
         color: Qt.rgba(0,0,0,0.5)
@@ -76,16 +174,26 @@ Item {
             source: "resources/BackgroundPlay.jpg"
 			//source: "http://images6.fanpop.com/image/photos/34900000/Cute-Panda-Bears-animals-34915025-2560-1600.jpg"
 
-            Image {
-                id:header
-                source: ""
-            }
-
             GridLayout {
                 id: grade
                 anchors.fill: parent
                 columns: 1
-                rows: 3
+                rows: 2
+
+                Image {
+                    id:header
+                    source: ""
+                    y: 0
+                    Layout.alignment: (Qt.AlignTop | Qt.AlignHCenter)
+
+                    Component.onCompleted: {
+                        //header.source = "resources/BHeader.png"
+                        console.log("OLAAAA")
+                        atividade.escolherLetra()
+                        console.log(source + " " + letrasUsadas)
+                    }
+                }
+
                 Image {
                     id: personagem
                     y: 0

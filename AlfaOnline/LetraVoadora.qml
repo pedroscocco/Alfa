@@ -1,10 +1,16 @@
-import QtQuick 2.0
+import QtQuick 2.1
+import "resources"
 
 Image {
     id: letraVoadora
     x: 0
     y: 0
     source:""
+
+    onXChanged: {
+        //console.log(source + " " + x)
+    }
+
     NumberAnimation on x { from: x; to: 1300; duration: 16000; onStopped: letraVoadora.destroy()}
     SequentialAnimation on y {
         loops: Animation.Infinite
