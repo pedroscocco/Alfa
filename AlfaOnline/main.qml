@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import QtQuick.Window 2.1
 import QtQuick.Layouts 1.1
+import QtMultimedia 5.0
 import "resources"
 import "mylogic.js" as Logic
 
@@ -17,6 +18,12 @@ Window {
         id: menuInicial
         anchors.fill: parent
         onVisibleChanged: visibilidadeMenuInicial()
+
+        SoundEffect {
+            id: buttonClick
+            source: "resources/sounds/ButtonSelect1.wav"
+            //source: "resources/sounds/ButtonSelect2.wav"
+        }
 
         Image {
             id: bg_menu
@@ -48,6 +55,7 @@ Window {
                         anchors.fill: parent
                         onPressed: {
                             estudar.source = "resources/StudyButtonClicked.png"
+                            buttonClick.play()
                         }
                         onReleased: {
                             quarto.visible = true;
@@ -66,6 +74,7 @@ Window {
                         anchors.fill: parent
                         onPressed: {
                             jogar.source = "resources/PlayButtonClicked.png"
+                            buttonClick.play()
                         }
                         onReleased: {
                             Logic.start()
@@ -85,6 +94,7 @@ Window {
                         anchors.fill: parent
                         onPressed: {
                             sair.source = "resources/QuitButtonClicked.png"
+                            buttonClick.play()
                         }
                         onReleased: {
                             sair.source = "resources/QuitButton.png"

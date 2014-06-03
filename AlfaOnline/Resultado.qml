@@ -59,6 +59,7 @@ Item {
                     anchors.fill: parent
                     onPressed: {
                         estudar.source = "resources/StudyButtonClicked.png"
+                        buttonClick.play()
                     }
                     onReleased: {
                         quarto.visible = true;
@@ -79,6 +80,7 @@ Item {
                     anchors.fill: parent
                     onPressed: {
                         jogar.source = jogar.srclkd
+                        buttonClick.play()
                     }
                     onReleased: {
                         jogar.source = jogar.src
@@ -103,6 +105,7 @@ Item {
                     anchors.fill: parent
                     onPressed: {
                         sair.source = "resources/QuitButtonClicked.png"
+                        buttonClick.play()
                     }
                     onReleased: {
                         sair.source = "resources/QuitButton.png"

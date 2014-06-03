@@ -1,4 +1,5 @@
 import QtQuick 2.1
+import QtMultimedia 5.0
 import "resources"
 import "mylogic.js" as Logic
 
@@ -10,6 +11,12 @@ Item {
     function mostrarPopup() {
         return Logic.mostrarPopup(airplane.source+"", ball.source+"", chair.source+"", dice.source+"")
     }
+
+    /*SoundEffect {
+        id: buttonClickQuarto
+        source: "resources/sounds/ButtonSelect1.wav"
+        //source: "resources/sounds/ButtonSelect1.wav"
+    }*/
 
     Rectangle {
         id: telaLetras
@@ -37,6 +44,7 @@ Item {
                         letra.letra = "A"
                         letra.imagem = "resources/LetterA.jpg"
                         letra.visible = true
+                        buttonClick.play()
                     }
                 }
             }
@@ -55,6 +63,7 @@ Item {
                         letra.letra = "B"
                         letra.imagem = "resources/LetterB.jpg"
                         letra.visible = true
+                        buttonClick.play()
                     }
                 }
             }
@@ -73,6 +82,7 @@ Item {
                         letra.letra = "C"
                         letra.imagem = "resources/LetterC.jpg"
                         letra.visible = true
+                        buttonClick.play()
                     }
                 }
             }
@@ -91,6 +101,7 @@ Item {
                         letra.letra = "D"
                         letra.imagem = "resources/LetterD.jpg"
                         letra.visible = true
+                        buttonClick.play()
                     }
                 }
             }
@@ -107,6 +118,7 @@ Item {
                 onPressed: {
                     if(quarto.focus) {
                         quarto.visible = false;
+                        buttonClick.play()
                     }
                 }
             }

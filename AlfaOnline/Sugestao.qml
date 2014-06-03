@@ -43,6 +43,7 @@ Item {
                             anchors.fill: parent
                             onPressed: {
                                 parent.source = "resources/PlayButtonClicked.png"
+                                buttonClick.play()
                             }
                             onReleased: {
                                 parent.source = "resources/PlayButton.png"
@@ -60,6 +61,7 @@ Item {
                                 parent.source = "resources/QuitButtonClicked.png"
                                 sugestao.visible = false
                                 quarto.focus = true
+                                buttonClick.play()
                             }
                         }
                     }

@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
+import QtMultimedia 5.0
 import "resources"
 import "mylogic.js" as Logic
 Item {
@@ -16,8 +17,16 @@ Item {
     property int contLetra: 0
     property int contHeader: 0
 
+    property int tickCounter: 0
+
     ListModel {
         id: listaLetras
+    }
+
+    SoundEffect {
+        id: jumpSound
+        //source: "resources/sounds/Jump1.wav"
+        source: "resources/sounds/Jump2.wav"
     }
 
     ListView {
@@ -34,7 +43,7 @@ Item {
 
     Timer {
         id: timer
-        interval: 5000
+        interval: 16
         running: false
         repeat: true
         onTriggered: tick()
@@ -49,11 +58,14 @@ Item {
 
     function tick() {
         if (atividade.state != "PARADO") {
-            escolherLetra()
-            //Precisa conseguir pegar as instancias dos objetos em especial o x e y
-            //console.log(verListaLetras.indexAt(-100, 180))
-            //console.log(listaLetras.count)
-
+            tickCounter++
+            if(tickCounter == 313) {
+                escolherLetra()
+                tickCounter = 0
+            }
+        }
+        else {
+            tickCounter = 0
         }
     }          
     function escolherLetra() {
@@ -85,6 +97,34 @@ Item {
                 }
                 break;
                 case 11: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 13: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 17: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 19: {
+                    componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                    listaLetras.append(componente)
+                    letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                    contLetra++
+                }
+                break;
+                case 23: {
                     componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
                     listaLetras.append(componente)
                     letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
@@ -132,6 +172,34 @@ Item {
                 contLetra++
             }
             break;
+            case 13: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            case 17: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            case 19: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
+            case 23: {
+                componente.createObject(backgroundAtividade,{ "x": -100, "y": 180, "alfa": alfa})
+                listaLetras.append(componente)
+                letrasVoadorasUsadas = letrasVoadorasUsadas * alfa
+                contLetra++
+            }
+            break;
             }
         }
     }
@@ -161,6 +229,30 @@ Item {
                 }
                 break;
                 case 11: {
+                    header.source = "resources/DHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                    contHeader++
+                }
+                break;
+                case 13: {
+                    header.source = "resources/DHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                    contHeader++
+                }
+                break;
+                case 17: {
+                    header.source = "resources/DHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                    contHeader++
+                }
+                break;
+                case 19: {
+                    header.source = "resources/DHeader.png"
+                    letrasUsadas = letrasUsadas * alfa
+                    contHeader++
+                }
+                break;
+                case 23: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
                     contHeader++
@@ -199,11 +291,31 @@ Item {
             break;
             case 11: {
                 header.source = "resources/DHeader.png"
-
                letrasUsadas = letrasUsadas * alfa
-
+                contHeader++
+            }
+            break;
+            case 13: {
+                header.source = "resources/DHeader.png"
                 letrasUsadas = letrasUsadas * alfa
-
+                contHeader++
+            }
+            break;
+            case 17: {
+                header.source = "resources/DHeader.png"
+                letrasUsadas = letrasUsadas * alfa
+                contHeader++
+            }
+            break;
+            case 19: {
+                header.source = "resources/DHeader.png"
+                letrasUsadas = letrasUsadas * alfa
+                contHeader++
+            }
+            break;
+            case 23: {
+                header.source = "resources/DHeader.png"
+                letrasUsadas = letrasUsadas * alfa
                 contHeader++
             }
             break;
@@ -229,6 +341,22 @@ Item {
         break;
         case 3: {
             ret = 11
+        }
+        break;
+        case 4: {
+            ret = 13
+        }
+        break;
+        case 5: {
+            ret = 17
+        }
+        break;
+        case 6: {
+            ret = 19
+        }
+        break;
+        case 7: {
+            ret = 23
         }
         break;
         }
@@ -296,6 +424,7 @@ Item {
                 if(personagem.state == "NOCHAO") {
                     personagem.state = "PULANDO"
                     animatePersonagem.start()
+                    jumpSound.play()
                 }
             }
         }
@@ -357,6 +486,7 @@ Item {
             anchors.fill: parent
             onPressed: {
                 atividade.visible = false;
+                buttonClick.play()
             }
         }
     }

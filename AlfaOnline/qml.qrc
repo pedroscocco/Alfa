@@ -62,5 +62,14 @@
         <file>resources/AHeader.png</file>
         <file>resources/BackgroundPopUp.jpg</file>
         <file>resources/LogoPopUp.png</file>
+        <file>resources/sounds/ButtonSelect1.wav</file>
+        <file>resources/sounds/ButtonSelect2.wav</file>
+        <file>resources/sounds/CapturaLetra1Sine.wav</file>
+        <file>resources/sounds/CapturaLetra1Square.wav</file>
+        <file>resources/sounds/CapturaLetra2Sine.wav</file>
+        <file>resources/sounds/CapturaLetra2Square.wav</file>
+        <file>resources/sounds/CapturaLetra3Sine.wav</file>
+        <file>resources/sounds/Jump1.wav</file>
+        <file>resources/sounds/Jump2.wav</file>
     </qresource>
 </RCC>

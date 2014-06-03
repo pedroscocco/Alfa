@@ -31,7 +31,10 @@ Item {
                 source: "resources/Arrow.png"
                 MouseArea {
                     anchors.fill: parent
-                    onPressed: letra.visible = false
+                    onPressed: {
+                        letra.visible = false
+                        buttonClick.play()
+                    }
                 }
             }
         }

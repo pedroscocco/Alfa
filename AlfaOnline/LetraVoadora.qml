@@ -1,5 +1,5 @@
-import QtQuick 2.0
 import QtQuick 2.1
+import QtMultimedia 5.0
 import "resources"
 import "mylogic.js" as Logic
 
@@ -12,6 +12,15 @@ Image {
     property int alfa: 3
     property int flag: 0
 
+    SoundEffect {
+        id: letraCapturada
+        source: "resources/sounds/CapturaLetra1Sine.wav"
+        //source: "resources/sounds/CapturaLetra1Square.wav"
+        //source: "resources/sounds/CapturaLetra2Sine.wav"
+        //source: "resources/sounds/CapturaLetra2Square.wav"
+        //source: "resources/sounds/CapturaLetra3Sine.wav"
+    }
+
     onXChanged: {
         var sourcePath= source+"";
         if(((x>564.0) && (x<716.0)) && flag == 0) {
@@ -20,6 +29,7 @@ Image {
                     source= Logic.getSource(sourcePath, "Ok");
                     flag = 1
                     //console.log("source path"+source)
+                    letraCapturada.play()
                 }
                 else {
                     source= Logic.getSource(sourcePath, "Wrong");
