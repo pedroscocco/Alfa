@@ -9,13 +9,15 @@ Image {
     y: 0
     source:""
 
+    property int alfa: 3
+
     onXChanged: {
         if((x>574.0) && (x<721.0)) {
             Logic.setLetterCenter(source + "");
             source: Logic.getSource();
-            console.log("Dentro: "+source + "    x: "+x);
+            //console.log("Dentro: "+source + "    x: "+x);
         }else{
-             console.log(source + "    x: "+x  );
+            // console.log(source + "    x: "+x  );
             Logic.setLetterCenter(null);
         }
     }
@@ -30,20 +32,20 @@ Image {
 
 
     Component.onCompleted: {
-        switch(Math.floor(Math.random()*4)) {
-        case 0: {
+        switch(alfa) {
+        case 3: {
             letraVoadora.source = "resources/A_.png"
         }
         break;
-        case 1: {
+        case 5: {
             letraVoadora.source = "resources/B_.png"
         }
         break;
-        case 2: {
+        case 7: {
             letraVoadora.source = "resources/C_.png"
         }
         break;
-        case 3: {
+        case 11: {
             letraVoadora.source = "resources/D_.png"
         }
         break;
