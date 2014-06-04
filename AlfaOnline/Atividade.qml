@@ -417,7 +417,23 @@ Item {
                     /*Component.onCompleted: {
                        atividade.escolherHeaderLetra()
                     }*/
+
+                    RowLayout {
+                        Image {
+                            id: life1
+                            source: "resources/Life.png"
+                        }
+                        Image {
+                            id: life2
+                            source: "resources/Life.png"
+                        }
+                        Image {
+                            id: life3
+                            source: "resources/Life.png"
+                        }
+                    }
                 }
+
 
                 Image {
                     id: personagem
