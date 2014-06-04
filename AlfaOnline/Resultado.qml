@@ -85,13 +85,13 @@ Item {
                     onReleased: {
                         jogar.source = jogar.src
                         resultado.visible = false
+                        atividade.visible = true
                         if(telaResultado.state === 'LOW') {
                             atividade.retry()
                         }
                         else if(telaResultado.state === 'HIGH') {
                             atividade.next()
                         }
-                        atividade.visible = true
                     }
                 }
             }

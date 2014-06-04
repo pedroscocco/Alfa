@@ -467,6 +467,7 @@ Item {
 
     function retry() {
         Logic.start()
+        backgroundAtividade.source = "resources/BackgroundPlay.jpg"
         listaLetras.clear()
         escolherHeaderLetra()
     }
