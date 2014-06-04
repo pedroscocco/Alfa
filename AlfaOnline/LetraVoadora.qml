@@ -33,7 +33,7 @@ Image {
         if(Logic.getClearLetters()) {
             destroy()
         }
-        if(((x>564.0) && (x<716.0)) && flag == 0) {
+        if(((x+143>564.0) && (x<716.0)) && flag == 0) {
             if(Logic.getAnswer()>145 && Logic.getAnswer()<376) {
                 if (sourcePath.indexOf(Logic.getCorrectLetter())>0){
                     source= Logic.getSource(sourcePath, "Ok");

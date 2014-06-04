@@ -30,6 +30,13 @@ Item {
         //source: "resources/sounds/Jump2.wav"
     }
 
+    SoundEffect {
+        id: trocaHeader
+        //source: "resources/sounds/TrocaHeader1.wav"
+        //source: "resources/sounds/TrocaHeader1.wav"
+        source: "resources/sounds/TrocaHeader1.wav"
+    }
+
     ListView {
         id: verListaLetras
         model: listaLetras
@@ -207,7 +214,7 @@ Item {
 
     function escolherHeaderLetra() {
         var alfa = letraAleatoria()
-        //console.log("ALFA: " + alfa)
+        console.log("ALFA: " + alfa)
         if (letrasUsadas != 1) {
             if (letrasUsadas % alfa != 0) {
                 switch(alfa) {
@@ -472,6 +479,7 @@ Item {
     }
 
     function change(){
+        trocaHeader.play()
         escolherHeaderLetra()
     }
 
@@ -497,6 +505,7 @@ Item {
                 atividade.visible = false;
                 Logic.setClearLetters(true)
                 buttonClick.play()
+                contHeader = 0
             }
         }
     }
