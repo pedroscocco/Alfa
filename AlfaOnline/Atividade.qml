@@ -79,7 +79,7 @@ Item {
     function escolherLetra() {
         var alfa = letraAleatoria()
         var componente = Qt.createComponent("LetraVoadora.qml")
-        //console.log("ALFA: " + alfa)
+        console.log("ALFA: " + alfa)
         if (letrasVoadorasUsadas != 1) {
             if (letrasVoadorasUsadas % alfa != 0) {
                 switch(alfa) {
@@ -214,55 +214,63 @@ Item {
 
     function escolherHeaderLetra() {
         var alfa = letraAleatoria()
-        console.log("ALFA: " + alfa)
+        //console.log("ALFA: " + alfa)
         if (letrasUsadas != 1) {
             if (letrasUsadas % alfa != 0) {
                 switch(alfa) {
                 case 3: {
                     header.source = "resources/AHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 5: {
                     header.source = "resources/BHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 7: {
                     header.source = "resources/CHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 11: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 13: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 17: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 19: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
                 case 23: {
                     header.source = "resources/DHeader.png"
                     letrasUsadas = letrasUsadas * alfa
+                    Logic.setCorrectLetter(header.source+"")
                     contHeader++
                 }
                 break;
@@ -282,54 +290,61 @@ Item {
             case 3: {
                 header.source = "resources/AHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 5: {
                 header.source = "resources/BHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 7: {
                  header.source = "resources/CHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 11: {
                 header.source = "resources/DHeader.png"
                letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 13: {
                 header.source = "resources/DHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 17: {
                 header.source = "resources/DHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 19: {
                 header.source = "resources/DHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             case 23: {
                 header.source = "resources/DHeader.png"
                 letrasUsadas = letrasUsadas * alfa
+                Logic.setCorrectLetter(header.source+"")
                 contHeader++
             }
             break;
             }
         }
-        Logic.setCorrectLetter(header.source+"")
     }
 
     function letraAleatoria() {
