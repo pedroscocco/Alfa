@@ -477,6 +477,7 @@ Item {
         resultado.prepare(result)
         resultado.visible = true
         atividade.visible = false
+        Logic.setClearLetters(true)
         console.log("Exibe resultado: "+ result)
     }
 
@@ -492,6 +493,7 @@ Item {
             anchors.fill: parent
             onPressed: {
                 atividade.visible = false;
+                Logic.setClearLetters(true)
                 buttonClick.play()
             }
         }
