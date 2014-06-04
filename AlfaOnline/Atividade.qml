@@ -413,9 +413,9 @@ Item {
                     y: 0
                     Layout.alignment: (Qt.AlignTop | Qt.AlignHCenter)
 
-                    Component.onCompleted: {
+                    /*Component.onCompleted: {
                        atividade.escolherHeaderLetra()
-                    }
+                    }*/
                 }
 
                 Image {
