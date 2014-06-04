@@ -61,6 +61,7 @@ Item {
         if (state == "INICIADO") {
             timer.running = true;
             escolherLetra()
+            escolherHeaderLetra()
         }
     }
 
@@ -484,14 +485,14 @@ Item {
         Logic.start()
         backgroundAtividade.source = "resources/BackgroundPlay.jpg"
         listaLetras.clear()
-        escolherHeaderLetra()
+        //escolherHeaderLetra()
     }
 
     function next(){
         Logic.start()
         backgroundAtividade.source = "resources/BackgroundPlay2.jpg"
         listaLetras.clear()
-        escolherHeaderLetra()
+        //escolherHeaderLetra()
     }
 
     function change(){
