@@ -79,7 +79,7 @@ Item {
     function escolherLetra() {
         var alfa = letraAleatoria()
         var componente = Qt.createComponent("LetraVoadora.qml")
-        console.log("ALFA: " + alfa)
+        //console.log("ALFA: " + alfa)
         if (letrasVoadorasUsadas != 1) {
             if (letrasVoadorasUsadas % alfa != 0) {
                 switch(alfa) {
