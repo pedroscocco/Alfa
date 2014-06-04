@@ -75,5 +75,8 @@
         <file>resources/BackgroundRoom2.jpg</file>
         <file>resources/StudyNextButton.png</file>
         <file>resources/StudyNextButtonClicked.png</file>
+        <file>resources/sounds/Erro1.wav</file>
+        <file>resources/sounds/Erro2.wav</file>
+        <file>resources/sounds/Erro3.wav</file>
     </qresource>
 </RCC>

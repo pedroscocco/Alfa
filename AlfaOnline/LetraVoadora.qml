@@ -21,6 +21,13 @@ Image {
         //source: "resources/sounds/CapturaLetra3Sine.wav"
     }
 
+    SoundEffect {
+        id: letraErrada
+        source: "resources/sounds/Erro1.wav"
+        //source: "resources/sounds/Erro1.wav"
+        //source: "resources/sounds/Erro1.wav"
+    }
+
     onXChanged: {
         var sourcePath= source+"";
         if(Logic.getClearLetters()) {
@@ -37,6 +44,7 @@ Image {
                 else {
                     source= Logic.getSource(sourcePath, "Wrong");
                     flag = 1
+                    letraErrada.play()
                 }
             }
         }
