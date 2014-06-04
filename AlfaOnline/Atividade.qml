@@ -60,6 +60,9 @@ Item {
     onStateChanged: {
         if (state == "INICIADO") {
             timer.running = true;
+            life1.source= "resources/Life.png"
+            life2.source= "resources/Life.png"
+            life3.source= "resources/Life.png"
             escolherLetra()
             escolherHeaderLetra()
         }
@@ -419,6 +422,9 @@ Item {
                     }*/
 
                     RowLayout {
+                        anchors.right: parent.right
+                        anchors.bottom: parent.bottom
+
                         Image {
                             id: life1
                             source: "resources/Life.png"
@@ -533,13 +539,13 @@ Item {
             life2.source= "resources/LifeLost.png"
             life3.source= "resources/LifeLost.png"
         }else if(numberOfLife===1){
-            life1.source= "resources/Life.png"
+            life1.source= "resources/LifeLost.png"
             life2.source= "resources/LifeLost.png"
-            life3.source= "resources/LifeLost.png"
+            life3.source= "resources/Life.png"
         }else if(numberOfLife===2){
-            life1.source= "resources/Life.png"
+            life1.source= "resources/LifeLost.png"
             life2.source= "resources/Life.png"
-            life3.source= "resources/LifeLost.png"
+            life3.source= "resources/Life.png"
         }else if(numberOfLife===3){
             life1.source= "resources/Life.png"
             life2.source= "resources/Life.png"
