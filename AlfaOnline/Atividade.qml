@@ -514,6 +514,9 @@ Item {
     function change(){
         trocaHeader.play()
         escolherHeaderLetra()
+        life1.source= "resources/Life.png"
+        life2.source= "resources/Life.png"
+        life3.source= "resources/Life.png"
     }
 
     function toResult(result){
@@ -522,6 +525,26 @@ Item {
         atividade.visible = false
         Logic.setClearLetters(true)
         console.log("Exibe resultado: "+ result)
+    }
+
+    function setLife(numberOfLife){
+        if(numberOfLife===0){
+            life1.source= "resources/LifeLost.png"
+            life2.source= "resources/LifeLost.png"
+            life3.source= "resources/LifeLost.png"
+        }else if(numberOfLife===1){
+            life1.source= "resources/Life.png"
+            life2.source= "resources/LifeLost.png"
+            life3.source= "resources/LifeLost.png"
+        }else if(numberOfLife===2){
+            life1.source= "resources/Life.png"
+            life2.source= "resources/Life.png"
+            life3.source= "resources/LifeLost.png"
+        }else if(numberOfLife===3){
+            life1.source= "resources/Life.png"
+            life2.source= "resources/Life.png"
+            life3.source= "resources/Life.png"
+        }
     }
 
     Component.onCompleted: Logic.setAtividadeItem(atividade)

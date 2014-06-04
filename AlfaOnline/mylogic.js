@@ -34,7 +34,6 @@ function setCorrectLetter(source){
     }else  if(source1.indexOf("DHeader")>0){
         correctLetter='D_.png';
     }
-
     console.log("Letter: correct111: "+ correctLetter)
 
 }
@@ -59,6 +58,7 @@ function getSource (source, resultNow){
 
     }else {
         tries++;
+        setLife();
         console.log("trie++: "+ tries);
         if(tries===3){
             if(numberOfActivities===3){
@@ -69,8 +69,7 @@ function getSource (source, resultNow){
              numberOfActivities++;
 
             tries=0;
-
-     }
+         }
     }
     return s;
 }
@@ -104,8 +103,6 @@ function getResult(){
     return result;
 }
 
-
-
 function setAtividadeItem(tempAtividadeItem) {
     atividadeItem = tempAtividadeItem;
 }
@@ -117,3 +114,9 @@ function getClearLetters() {
 function setClearLetters(clear) {
     clearLetters = clear;
 }
+
+
+function setLife(){
+    atividadeItem.setLife(3-tries);
+}
+
